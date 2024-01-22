@@ -108,7 +108,10 @@ class _MessageBubblesWidgetState extends State<MessageBubblesWidget> {
                       child: Padding(
                         padding: EdgeInsets.all(12.0),
                         child: Text(
-                          widget.mesageText!,
+                          valueOrDefault<String>(
+                            widget.mesageText,
+                            'te',
+                          ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Open Sans',
