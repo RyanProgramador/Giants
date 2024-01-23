@@ -74,7 +74,7 @@ class _DesenvolvimentoWidgetState extends State<DesenvolvimentoWidget> {
             width: double.infinity,
             height: double.infinity,
             decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).secondaryBackground,
+              color: Color(0xFF370000),
             ),
             child: Column(
               mainAxisSize: MainAxisSize.max,
@@ -197,15 +197,20 @@ class _DesenvolvimentoWidgetState extends State<DesenvolvimentoWidget> {
                   builder: (context) {
                     final asdasd =
                         FFAppState().eventosLitados.map((e) => e).toList();
-                    return Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: List.generate(asdasd.length, (asdasdIndex) {
-                        final asdasdItem = asdasd[asdasdIndex];
-                        return Text(
-                          asdasdItem.toString(),
-                          style: FlutterFlowTheme.of(context).bodyMedium,
-                        );
-                      }),
+                    return SingleChildScrollView(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: List.generate(asdasd.length, (asdasdIndex) {
+                          final asdasdItem = asdasd[asdasdIndex];
+                          return Text(
+                            getJsonField(
+                              asdasdItem,
+                              r'''$.descricao''',
+                            ).toString(),
+                            style: FlutterFlowTheme.of(context).bodyMedium,
+                          );
+                        }),
+                      ),
                     );
                   },
                 ),
