@@ -1277,11 +1277,10 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                     return Builder(
                                                       builder: (context) {
                                                         final gridListar =
-                                                            ListarEventosCall
-                                                                .dadosJsonDestaqueDOIS(
-                                                          gridViewListarEventosResponse
-                                                              .jsonBody,
-                                                        ).toList();
+                                                            FFAppState()
+                                                                .eventosListadosDestaqueDois
+                                                                .map((e) => e)
+                                                                .toList();
                                                         return GridView.builder(
                                                           padding:
                                                               EdgeInsets.zero,
