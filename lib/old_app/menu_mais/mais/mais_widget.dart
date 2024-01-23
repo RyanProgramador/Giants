@@ -903,7 +903,7 @@ class _MaisWidgetState extends State<MaisWidget> {
                                             ),
                                           ),
                                           Text(
-                                            'Deslogar',
+                                            'Sair',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium,
                                           ),

@@ -698,7 +698,7 @@ class _MenuWidgetState extends State<MenuWidget> {
                                         ),
                                       ),
                                       Text(
-                                        'Logout',
+                                        'Sair',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium,
                                       ),
