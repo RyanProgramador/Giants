@@ -38,7 +38,7 @@ class _InicioWidgetState extends State<InicioWidget> {
         pesId: FFAppState().usrID,
       );
       if ((_model.apicallListarEventos?.succeeded ?? true)) {
-        setState(() {
+        FFAppState().update(() {
           FFAppState().eventosLitados = getJsonField(
             (_model.apicallListarEventos?.jsonBody ?? ''),
             r'''$.dados[?(@.destaque == 1)]''',
@@ -1253,11 +1253,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                     final gridListarDes =
                                                         FFAppState()
                                                             .eventosListadosDestaqueDois
-                                                            .map((e) =>
-                                                                getJsonField(
-                                                                  e,
-                                                                  r'''$''',
-                                                                ))
+                                                            .map((e) => e)
                                                             .toList();
                                                     return GridView.builder(
                                                       padding: EdgeInsets.zero,

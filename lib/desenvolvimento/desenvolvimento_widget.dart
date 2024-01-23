@@ -216,20 +216,17 @@ class _DesenvolvimentoWidgetState extends State<DesenvolvimentoWidget> {
                 ),
                 Builder(
                   builder: (context) {
-                    final asdasd = FFAppState()
+                    final asdasd2 = FFAppState()
                         .eventosListadosDestaqueDois
                         .map((e) => e)
                         .toList();
                     return SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
-                        children: List.generate(asdasd.length, (asdasdIndex) {
-                          final asdasdItem = asdasd[asdasdIndex];
+                        children: List.generate(asdasd2.length, (asdasd2Index) {
+                          final asdasd2Item = asdasd2[asdasd2Index];
                           return Text(
-                            getJsonField(
-                              asdasdItem,
-                              r'''$.descricao''',
-                            ).toString(),
+                            asdasd2Item.toString(),
                             style: FlutterFlowTheme.of(context).bodyMedium,
                           );
                         }),
