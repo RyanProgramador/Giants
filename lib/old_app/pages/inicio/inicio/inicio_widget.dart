@@ -875,10 +875,11 @@ class _InicioWidgetState extends State<InicioWidget> {
                                       ),
                                       child: Builder(
                                         builder: (context) {
-                                          final carrocel2 =
-                                              containerListarEventosResponse
-                                                  .jsonBody
-                                                  .toList();
+                                          final carrocel2 = ListarEventosCall
+                                              .dadosJsonDestaqueDOIS(
+                                            containerListarEventosResponse
+                                                .jsonBody,
+                                          ).toList();
                                           return Container(
                                             width: double.infinity,
                                             height: 101.0,
