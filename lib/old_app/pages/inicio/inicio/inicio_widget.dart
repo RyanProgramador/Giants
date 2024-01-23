@@ -191,10 +191,20 @@ class _InicioWidgetState extends State<InicioWidget> {
                                       ),
                                       child: Builder(
                                         builder: (context) {
-                                          final carrocel =
-                                              containerListarEventosResponse
-                                                  .jsonBody
-                                                  .toList();
+                                          final carrocel = (containerListarEventosResponse
+                                                          .jsonBody
+                                                          .toList()
+                                                          .map<DadosEventosStruct?>(
+                                                              DadosEventosStruct
+                                                                  .maybeFromMap)
+                                                          .toList()
+                                                      as Iterable<
+                                                          DadosEventosStruct?>)
+                                                  .withoutNulls
+                                                  ?.map((e) => e.toMap())
+                                                  .toList()
+                                                  ?.toList() ??
+                                              [];
                                           return Container(
                                             width: double.infinity,
                                             height: 101.0,
@@ -1129,14 +1139,10 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                               .center,
                                                                       children: [
                                                                         Text(
-                                                                          valueOrDefault<
-                                                                              String>(
-                                                                            getJsonField(
-                                                                              carrocelItem,
-                                                                              r'''$.dados[?(@.destaque == 1)].descricao''',
-                                                                            )?.toString(),
-                                                                            '1',
-                                                                          ),
+                                                                          getJsonField(
+                                                                            carrocelItem,
+                                                                            r'''$.descricao''',
+                                                                          ).toString(),
                                                                           style:
                                                                               TextStyle(
                                                                             fontFamily:
