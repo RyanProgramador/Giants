@@ -1279,7 +1279,7 @@ class _EventosWidgetState extends State<EventosWidget> {
                           ),
                         if ((_model.choiceChipsValue == 'Inscritos') &&
                             (MediaQuery.sizeOf(context).width < 450.0) &&
-                            (FFAppState().UsrClass != '5'))
+                            (FFAppState().UsrClass != 5))
                           Expanded(
                             flex: 10,
                             child: Container(
@@ -1615,7 +1615,7 @@ class _EventosWidgetState extends State<EventosWidget> {
                             ),
                           ),
                         if ((_model.choiceChipsValue == 'Inscritos') &&
-                            (FFAppState().UsrClass == '5'))
+                            (FFAppState().UsrClass == 5))
                           Expanded(
                             flex: 10,
                             child: Container(
@@ -1637,7 +1637,7 @@ class _EventosWidgetState extends State<EventosWidget> {
                             ),
                           ),
                         if ((_model.choiceChipsValue == 'Inscritos') &&
-                            (FFAppState().UsrClass == '4'))
+                            (FFAppState().UsrClass == 4))
                           Expanded(
                             flex: 10,
                             child: Container(
@@ -1661,7 +1661,7 @@ class _EventosWidgetState extends State<EventosWidget> {
                           ),
                         if ((_model.choiceChipsValue == 'Inscritos') &&
                             (MediaQuery.sizeOf(context).width > 450.0) &&
-                            (FFAppState().UsrClass != '5'))
+                            (FFAppState().UsrClass != 5))
                           Expanded(
                             flex: 10,
                             child: Container(

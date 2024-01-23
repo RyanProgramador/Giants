@@ -356,7 +356,7 @@ class _ModalEventoWidgetState extends State<ModalEventoWidget> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         if ((widget.jaIngressou == false) &&
-                            (FFAppState().UsrClass != '5'))
+                            (FFAppState().UsrClass != 5))
                           Align(
                             alignment: AlignmentDirectional(0.0, 1.0),
                             child: Padding(
@@ -365,7 +365,7 @@ class _ModalEventoWidgetState extends State<ModalEventoWidget> {
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   var _shouldSetState = false;
-                                  if (FFAppState().UsrClass == '4') {
+                                  if (FFAppState().UsrClass == 4) {
                                     await showDialog(
                                       context: context,
                                       builder: (alertDialogContext) {
@@ -479,7 +479,7 @@ class _ModalEventoWidgetState extends State<ModalEventoWidget> {
                               ),
                             ),
                           ),
-                        if (FFAppState().UsrClass == '5')
+                        if (FFAppState().UsrClass == 5)
                           Align(
                             alignment: AlignmentDirectional(0.0, 1.0),
                             child: Padding(
@@ -530,7 +530,7 @@ class _ModalEventoWidgetState extends State<ModalEventoWidget> {
                             ),
                           ),
                         if ((widget.jaIngressou != false) &&
-                            (FFAppState().UsrClass != '5'))
+                            (FFAppState().UsrClass != 5))
                           Align(
                             alignment: AlignmentDirectional(0.0, 1.0),
                             child: Padding(
@@ -549,7 +549,8 @@ class _ModalEventoWidgetState extends State<ModalEventoWidget> {
                                             MediaQuery.viewInsetsOf(context),
                                         child: ModalDoQrCodeWidget(
                                           pesID: FFAppState().usrID,
-                                          cargoID: FFAppState().UsrClass,
+                                          cargoID:
+                                              FFAppState().UsrClass.toString(),
                                           eventoID: widget.idEvento!,
                                           evenOuimer: widget.evenOuImer!,
                                         ),

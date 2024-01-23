@@ -113,7 +113,7 @@ class _MaisWidgetState extends State<MaisWidget> {
                             highlightColor: Colors.transparent,
                             onTap: () async {
                               var _shouldSetState = false;
-                              if (FFAppState().UsrClass == '5') {
+                              if (FFAppState().UsrClass == 5) {
                                 await showDialog(
                                   context: context,
                                   builder: (alertDialogContext) {
@@ -320,7 +320,7 @@ class _MaisWidgetState extends State<MaisWidget> {
                                   ),
                                 ),
                               ),
-                              if (FFAppState().UsrClass != '5')
+                              if (FFAppState().UsrClass != 5)
                                 Padding(
                                   padding: EdgeInsets.all(8.0),
                                   child: InkWell(
@@ -425,7 +425,7 @@ class _MaisWidgetState extends State<MaisWidget> {
                                     ),
                                   ),
                                 ),
-                              if (FFAppState().UsrClass != '5')
+                              if (FFAppState().UsrClass != 5)
                                 Padding(
                                   padding: EdgeInsets.all(8.0),
                                   child: InkWell(
@@ -548,7 +548,7 @@ class _MaisWidgetState extends State<MaisWidget> {
                                   ),
                                 ),
                               ),
-                              if (FFAppState().UsrClass != '5')
+                              if (FFAppState().UsrClass != 5)
                                 Padding(
                                   padding: EdgeInsets.all(8.0),
                                   child: InkWell(
@@ -606,7 +606,7 @@ class _MaisWidgetState extends State<MaisWidget> {
                                     ),
                                   ),
                                 ),
-                              if (FFAppState().UsrClass != '5')
+                              if (FFAppState().UsrClass != 5)
                                 Padding(
                                   padding: EdgeInsets.all(8.0),
                                   child: InkWell(
@@ -665,7 +665,7 @@ class _MaisWidgetState extends State<MaisWidget> {
                                     ),
                                   ),
                                 ),
-                              if (FFAppState().UsrClass == '5')
+                              if (FFAppState().UsrClass == 5)
                                 Padding(
                                   padding: EdgeInsets.all(8.0),
                                   child: InkWell(
@@ -790,7 +790,7 @@ class _MaisWidgetState extends State<MaisWidget> {
                                     ),
                                   ),
                                 ),
-                              if (FFAppState().UsrClass == '5')
+                              if (FFAppState().UsrClass == 5)
                                 Padding(
                                   padding: EdgeInsets.all(8.0),
                                   child: InkWell(
@@ -862,9 +862,10 @@ class _MaisWidgetState extends State<MaisWidget> {
                                       FFAppState().UsrEmail = '';
                                       FFAppState().UsrNome = '';
                                       FFAppState().UsrPicture = '';
-                                      FFAppState().UsrClass = '';
                                       FFAppState().usrID = '';
                                       FFAppState().PorcentagemCFG = 0.0;
+                                      FFAppState().UsrClass =
+                                          FFAppState().UsrClass;
                                     });
 
                                     context.goNamed(

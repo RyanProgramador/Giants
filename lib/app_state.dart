@@ -29,7 +29,7 @@ class FFAppState extends ChangeNotifier {
       _UsrPicture = prefs.getString('ff_UsrPicture') ?? _UsrPicture;
     });
     _safeInit(() {
-      _UsrClass = prefs.getString('ff_UsrClass') ?? _UsrClass;
+      _UsrClass = prefs.getInt('ff_UsrClass') ?? _UsrClass;
     });
     _safeInit(() {
       _coutryPickerCelularCadastro =
@@ -124,11 +124,11 @@ class FFAppState extends ChangeNotifier {
     prefs.setString('ff_UsrPicture', _value);
   }
 
-  String _UsrClass = '';
-  String get UsrClass => _UsrClass;
-  set UsrClass(String _value) {
+  int _UsrClass = 0;
+  int get UsrClass => _UsrClass;
+  set UsrClass(int _value) {
     _UsrClass = _value;
-    prefs.setString('ff_UsrClass', _value);
+    prefs.setInt('ff_UsrClass', _value);
   }
 
   String _coutryPickerCelularCadastro = '+55';

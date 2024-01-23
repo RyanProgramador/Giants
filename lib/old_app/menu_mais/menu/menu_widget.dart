@@ -659,9 +659,9 @@ class _MenuWidgetState extends State<MenuWidget> {
                                   FFAppState().UsrEmail = '';
                                   FFAppState().UsrNome = '';
                                   FFAppState().UsrPicture = '';
-                                  FFAppState().UsrClass = '';
                                   FFAppState().usrID = '';
                                   FFAppState().PorcentagemCFG = 0.0;
+                                  FFAppState().UsrClass = 0;
                                 });
 
                                 context.goNamed(

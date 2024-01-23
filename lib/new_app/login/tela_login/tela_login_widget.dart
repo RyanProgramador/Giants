@@ -394,10 +394,6 @@ class _TelaLoginWidgetState extends State<TelaLoginWidget>
                                         LoginCall.pictureLogin(
                                       (_model.login?.jsonBody ?? ''),
                                     )!;
-                                    FFAppState().UsrClass =
-                                        LoginCall.classificacaoLogin(
-                                      (_model.login?.jsonBody ?? ''),
-                                    ).toString();
                                     FFAppState().diaDoUltimoAcesso =
                                         getCurrentTimestamp;
                                     FFAppState().EmailDeSessao =
@@ -406,12 +402,18 @@ class _TelaLoginWidgetState extends State<TelaLoginWidget>
                                         _model.senhaController.text;
                                     FFAppState().usrID = LoginCall.iDLogin(
                                       (_model.login?.jsonBody ?? ''),
-                                    ).toString();
+                                    )!
+                                        .toString();
                                     FFAppState().PorcentagemCFG =
                                         PorcentagemCFGCall.porcentagemCFG(
                                       (_model.retornoPorcentagemCFG?.jsonBody ??
                                           ''),
                                     );
+                                    FFAppState().UsrClass =
+                                        LoginCall.classificacaoLogin(
+                                      (_model.login?.jsonBody ?? ''),
+                                    )!
+                                            .round();
                                   });
 
                                   context.goNamed(
