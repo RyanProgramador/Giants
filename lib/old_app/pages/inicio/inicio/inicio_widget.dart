@@ -189,11 +189,10 @@ class _InicioWidgetState extends State<InicioWidget> {
                                           snapshot.data!;
                                       return Builder(
                                         builder: (context) {
-                                          final carrocel = getJsonField(
-                                            carouselListarEventosResponse
-                                                .jsonBody,
-                                            r'''$.dados[?(@.destaque == 1)]''',
-                                          ).toList();
+                                          final carrocel =
+                                              carouselListarEventosResponse
+                                                  .jsonBody
+                                                  .toList();
                                           return Container(
                                             width: double.infinity,
                                             height: 101.0,
@@ -1117,10 +1116,14 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                               .center,
                                                                       children: [
                                                                         Text(
-                                                                          getJsonField(
-                                                                            carrocelItem,
-                                                                            r'''$.descricao''',
-                                                                          ).toString(),
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            getJsonField(
+                                                                              carrocelItem,
+                                                                              r'''$.dados[?(@.destaque == 1)].descricao''',
+                                                                            )?.toString(),
+                                                                            '1',
+                                                                          ),
                                                                           style:
                                                                               TextStyle(
                                                                             fontFamily:
