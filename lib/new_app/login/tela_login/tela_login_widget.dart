@@ -83,49 +83,6 @@ class _TelaLoginWidgetState extends State<TelaLoginWidget>
         getCurrentTimestamp,
         FFAppState().diaDoUltimoAcesso,
       );
-      if (_model.lembrarSenha!) {
-        _model.loginLembrarSenha = await LoginCall.call(
-          email: FFAppState().EmailDeSessao,
-          senha: FFAppState().SenhaSessao,
-        );
-        if (LoginCall.statusLogin(
-          (_model.loginLembrarSenha?.jsonBody ?? ''),
-        )!) {
-          setState(() {
-            FFAppState().UsrEmail = LoginCall.emailLogin(
-              (_model.loginLembrarSenha?.jsonBody ?? ''),
-            )!;
-            FFAppState().UsrNome = LoginCall.nomeLogin(
-              (_model.loginLembrarSenha?.jsonBody ?? ''),
-            )!;
-            FFAppState().UsrPicture = LoginCall.pictureLogin(
-              (_model.loginLembrarSenha?.jsonBody ?? ''),
-            )!;
-            FFAppState().UsrClass = LoginCall.classificacaoLogin(
-              (_model.loginLembrarSenha?.jsonBody ?? ''),
-            )!
-                .toString();
-            FFAppState().usrID = LoginCall.iDLogin(
-              (_model.loginLembrarSenha?.jsonBody ?? ''),
-            )!
-                .toString();
-          });
-
-          context.goNamed(
-            'Inicio',
-            extra: <String, dynamic>{
-              kTransitionInfoKey: TransitionInfo(
-                hasTransition: true,
-                transitionType: PageTransitionType.scale,
-                alignment: Alignment.bottomCenter,
-                duration: Duration(milliseconds: 600),
-              ),
-            },
-          );
-        }
-      } else {
-        return;
-      }
     });
 
     _model.emailController ??= TextEditingController();
@@ -440,8 +397,7 @@ class _TelaLoginWidgetState extends State<TelaLoginWidget>
                                     FFAppState().UsrClass =
                                         LoginCall.classificacaoLogin(
                                       (_model.login?.jsonBody ?? ''),
-                                    )!
-                                            .toString();
+                                    ).toString();
                                     FFAppState().diaDoUltimoAcesso =
                                         getCurrentTimestamp;
                                     FFAppState().EmailDeSessao =
@@ -450,8 +406,7 @@ class _TelaLoginWidgetState extends State<TelaLoginWidget>
                                         _model.senhaController.text;
                                     FFAppState().usrID = LoginCall.iDLogin(
                                       (_model.login?.jsonBody ?? ''),
-                                    )!
-                                        .toString();
+                                    ).toString();
                                     FFAppState().PorcentagemCFG =
                                         PorcentagemCFGCall.porcentagemCFG(
                                       (_model.retornoPorcentagemCFG?.jsonBody ??
@@ -464,9 +419,7 @@ class _TelaLoginWidgetState extends State<TelaLoginWidget>
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
-                                        transitionType:
-                                            PageTransitionType.scale,
-                                        alignment: Alignment.bottomCenter,
+                                        transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 600),
                                       ),
                                     },

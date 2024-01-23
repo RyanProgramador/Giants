@@ -55,19 +55,18 @@ class LoginCall {
         response,
         r'''$.picture''',
       ));
-  static int? classificacaoLogin(dynamic response) =>
-      castToType<int>(getJsonField(
+  static dynamic classificacaoLogin(dynamic response) => getJsonField(
         response,
         r'''$.classificacao''',
-      ));
+      );
   static String? msgLogin(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.message''',
       ));
-  static int? iDLogin(dynamic response) => castToType<int>(getJsonField(
+  static dynamic iDLogin(dynamic response) => getJsonField(
         response,
         r'''$.id''',
-      ));
+      );
 }
 
 class EsqueciSenhaCall {

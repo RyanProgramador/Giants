@@ -18,8 +18,6 @@ class TelaLoginModel extends FlutterFlowModel<TelaLoginWidget> {
   final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - lembrarSenha] action in TelaLogin widget.
   bool? lembrarSenha;
-  // Stores action output result for [Backend Call - API (Login)] action in TelaLogin widget.
-  ApiCallResponse? loginLembrarSenha;
   // State field(s) for email widget.
   FocusNode? emailFocusNode;
   TextEditingController? emailController;
