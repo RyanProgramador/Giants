@@ -1259,7 +1259,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                       padding: EdgeInsets.zero,
                                                       gridDelegate:
                                                           SliverGridDelegateWithFixedCrossAxisCount(
-                                                        crossAxisCount: 3,
+                                                        crossAxisCount: 2,
                                                         crossAxisSpacing: 10.0,
                                                         mainAxisSpacing: 10.0,
                                                         childAspectRatio: 1.0,
