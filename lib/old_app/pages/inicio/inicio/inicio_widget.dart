@@ -1158,7 +1158,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                             'E. dd MMM • HH:mm',
                                                                             functions.strDataParaDateTime(getJsonField(
                                                                               carrocel2Item,
-                                                                              r'''$.data''',
+                                                                              r'''$.dados[?(@.destaque == 1)].data''',
                                                                             ).toString()),
                                                                             locale:
                                                                                 FFLocalizations.of(context).languageCode,
