@@ -190,7 +190,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                       ),
                                       child: Builder(
                                         builder: (context) {
-                                          final carrocel = ListarEventosCall
+                                          final carrocel1 = ListarEventosCall
                                               .dadosJsonDestaqueUM(
                                             containerListarEventosResponse
                                                 .jsonBody,
@@ -199,11 +199,11 @@ class _InicioWidgetState extends State<InicioWidget> {
                                             width: double.infinity,
                                             height: 101.0,
                                             child: CarouselSlider.builder(
-                                              itemCount: carrocel.length,
+                                              itemCount: carrocel1.length,
                                               itemBuilder:
-                                                  (context, carrocelIndex, _) {
-                                                final carrocelItem =
-                                                    carrocel[carrocelIndex];
+                                                  (context, carrocel1Index, _) {
+                                                final carrocel1Item =
+                                                    carrocel1[carrocel1Index];
                                                 return Builder(
                                                   builder: (context) => InkWell(
                                                     splashColor:
@@ -247,44 +247,44 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                   ModalEventoWidget(
                                                                 nomeTitulo:
                                                                     getJsonField(
-                                                                  carrocelItem,
+                                                                  carrocel1Item,
                                                                   r'''$.descricao''',
                                                                 ).toString(),
                                                                 exclusivoGiatnts:
                                                                     true,
                                                                 dataEvento:
                                                                     getJsonField(
-                                                                  carrocelItem,
+                                                                  carrocel1Item,
                                                                   r'''$.data''',
                                                                 ).toString(),
                                                                 localEvento:
                                                                     getJsonField(
-                                                                  carrocelItem,
+                                                                  carrocel1Item,
                                                                   r'''$.local''',
                                                                 ).toString(),
                                                                 sobreEvento:
                                                                     getJsonField(
-                                                                  carrocelItem,
+                                                                  carrocel1Item,
                                                                   r'''$.sobre''',
                                                                 ).toString(),
                                                                 fotoBase64:
                                                                     getJsonField(
-                                                                  carrocelItem,
+                                                                  carrocel1Item,
                                                                   r'''$.banner''',
                                                                 ).toString(),
                                                                 dataEventoFim:
                                                                     getJsonField(
-                                                                  carrocelItem,
+                                                                  carrocel1Item,
                                                                   r'''$.dataFim''',
                                                                 ).toString(),
                                                                 idEvento:
                                                                     getJsonField(
-                                                                  carrocelItem,
+                                                                  carrocel1Item,
                                                                   r'''$.id''',
                                                                 ).toString(),
                                                                 jaIngressou:
                                                                     getJsonField(
-                                                                              carrocelItem,
+                                                                              carrocel1Item,
                                                                               r'''$.ja_inscrito''',
                                                                             ) !=
                                                                             null
@@ -292,7 +292,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                         : false,
                                                                 evenOuImer:
                                                                     getJsonField(
-                                                                  carrocelItem,
+                                                                  carrocel1Item,
                                                                   r'''$.even_ou_imer''',
                                                                 ).toString(),
                                                               ),
@@ -348,12 +348,12 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                       valueOrDefault<
                                                                           String>(
                                                                     getJsonField(
-                                                                              carrocelItem,
+                                                                              carrocel1Item,
                                                                               r'''$.banner''',
                                                                             ) !=
                                                                             null
                                                                         ? getJsonField(
-                                                                            carrocelItem,
+                                                                            carrocel1Item,
                                                                             r'''$.banner''',
                                                                           ).toString()
                                                                         : 'iVBORw0KGgoAAAANSUhEUgAAAREAAAC4CAMAAADzLiguAAAANlBMVEXp7vG6vsHs8fS2ur3c4eTU2dzm6u3P1Ne4vL/u8/a4vL67v8G0ubzDx8rY3eDEyMvh5unKz9Izr04MAAADb0lEQVR4nO2c63KrIBRGFY1CY4x5/5c93nKiICZGGOvuWj86adowYc0HWxgxSQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOC3oiJwdJ/2oJr6Epy6Sc4qxeTXKtNPfoYfP9NXDj//f0xfv97oX2X6cU4l5pGl6TWNgdbF0b37AnPXUWwMVEd37wvqLKKQNnzm6A5uxcRMSEuWH93DrTRV/8XbaVBnQdFj9u4nm13Vpc+ILk3wy5FCn3LYqHL43hG+9ti0PqmRCNGO2HRMVJlGNqIx8mpakpEQyzRBRlSSd+u0vT0RY8Tkt6rq1mnXcl9fpBjp130DOt2Vk8HI9exG1G16VV81u5qWkBF7Ibxn6SrDSF5ZC7UdqxIRRoyzcZR9P25EGCnsiLRLwK87JMGIqt3NkjdL15VdQxFGSkfIm+v7Irt7jUmovm0f3B3o1Q7pVHuViMjIZeOo6aYdffP8hwQjSePuQq+U33Ee9ikRYcQ4tSar/Z996vMoEWHkue31wTSiJpV6WYkII4myjFS5rz/FdIAtKpFhxJpJqod3Xp3POEtKJFTf7vdGv2KSeYU4F7cLSoRkJFHJvRqcZDr3CnFrkntdIsVIW3CK8tam/ZEbb1+ckrSUEjlG2jeNUsbvw10PjimZf0KSkfVPLAyZxYHzV4woT0LcgSOk1rylWLu7YpaSv5KR9ftvpin5G0ZWhoyjRKIRU1tvF9XbO5JeSgQaMXU1nyrfJmSmRJ6RVkia3iZ/+CAhaVdcRiXijPRCpoPAex3iSYm06qvq+Q7ZZ0NmVDIxIiYjTyGdkv5vG4SINGIm9/32Kfl4yAg1YuppIlolWxIi0Yip7R2ybTdGizNiC9mMFlZr1O6zA8Iysjsh0oy0ZXf36SNRRsxlU1WRb8RcQpw/EmSkuw4JcGJPkJE6wJBJJVXfxXuMdho5d0YwkmDEBSM2GLGJboRaYxs5d0YSjNgZeVRBjoNXYowkTR6GsWkBRgI3jRG7aYzYTWPEbvqkRqI97sCc1MiwaaYfSRGa/JzPH3k+oyYNciEyZ2j4dE8Ac49vhmXHYdCjyOM+68p3QusXY8owm6uL6LPNqz0RlWTXozv3Haq5R5hXW66XMyakxwRb400p/IcNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4FD+AZS0NBe99dfKAAAAAElFTkSuQmCC',
@@ -440,7 +440,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                       children: [
                                                                         Text(
                                                                           getJsonField(
-                                                                            carrocelItem,
+                                                                            carrocel1Item,
                                                                             r'''$.dados[?(@.destaque == 1)].descricao''',
                                                                           ).toString(),
                                                                           style:
@@ -459,7 +459,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                           dateTimeFormat(
                                                                             'E. dd MMM • HH:mm',
                                                                             functions.strDataParaDateTime(getJsonField(
-                                                                              carrocelItem,
+                                                                              carrocel1Item,
                                                                               r'''$.data''',
                                                                             ).toString()),
                                                                             locale:
@@ -490,8 +490,8 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                   _model.carouselController1 ??=
                                                       CarouselController(),
                                               options: CarouselOptions(
-                                                initialPage:
-                                                    min(1, carrocel.length - 1),
+                                                initialPage: min(
+                                                    1, carrocel1.length - 1),
                                                 viewportFraction: 1.0,
                                                 disableCenter: true,
                                                 enlargeCenterPage: true,
@@ -875,20 +875,19 @@ class _InicioWidgetState extends State<InicioWidget> {
                                       ),
                                       child: Builder(
                                         builder: (context) {
-                                          final carrocel = ListarEventosCall
-                                              .dadosJsonDestaqueUM(
-                                            containerListarEventosResponse
-                                                .jsonBody,
-                                          ).toList();
+                                          final carrocel2 =
+                                              containerListarEventosResponse
+                                                  .jsonBody
+                                                  .toList();
                                           return Container(
                                             width: double.infinity,
                                             height: 101.0,
                                             child: CarouselSlider.builder(
-                                              itemCount: carrocel.length,
+                                              itemCount: carrocel2.length,
                                               itemBuilder:
-                                                  (context, carrocelIndex, _) {
-                                                final carrocelItem =
-                                                    carrocel[carrocelIndex];
+                                                  (context, carrocel2Index, _) {
+                                                final carrocel2Item =
+                                                    carrocel2[carrocel2Index];
                                                 return Builder(
                                                   builder: (context) => InkWell(
                                                     splashColor:
@@ -932,44 +931,44 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                   ModalEventoWidget(
                                                                 nomeTitulo:
                                                                     getJsonField(
-                                                                  carrocelItem,
+                                                                  carrocel2Item,
                                                                   r'''$.descricao''',
                                                                 ).toString(),
                                                                 exclusivoGiatnts:
                                                                     true,
                                                                 dataEvento:
                                                                     getJsonField(
-                                                                  carrocelItem,
+                                                                  carrocel2Item,
                                                                   r'''$.data''',
                                                                 ).toString(),
                                                                 localEvento:
                                                                     getJsonField(
-                                                                  carrocelItem,
+                                                                  carrocel2Item,
                                                                   r'''$.local''',
                                                                 ).toString(),
                                                                 sobreEvento:
                                                                     getJsonField(
-                                                                  carrocelItem,
+                                                                  carrocel2Item,
                                                                   r'''$.sobre''',
                                                                 ).toString(),
                                                                 fotoBase64:
                                                                     getJsonField(
-                                                                  carrocelItem,
+                                                                  carrocel2Item,
                                                                   r'''$.banner''',
                                                                 ).toString(),
                                                                 dataEventoFim:
                                                                     getJsonField(
-                                                                  carrocelItem,
+                                                                  carrocel2Item,
                                                                   r'''$.dataFim''',
                                                                 ).toString(),
                                                                 idEvento:
                                                                     getJsonField(
-                                                                  carrocelItem,
+                                                                  carrocel2Item,
                                                                   r'''$.id''',
                                                                 ).toString(),
                                                                 jaIngressou:
                                                                     getJsonField(
-                                                                              carrocelItem,
+                                                                              carrocel2Item,
                                                                               r'''$.ja_inscrito''',
                                                                             ) !=
                                                                             null
@@ -1029,12 +1028,12 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                       valueOrDefault<
                                                                           String>(
                                                                     getJsonField(
-                                                                              carrocelItem,
+                                                                              carrocel2Item,
                                                                               r'''$.banner''',
                                                                             ) !=
                                                                             null
                                                                         ? getJsonField(
-                                                                            carrocelItem,
+                                                                            carrocel2Item,
                                                                             r'''$.banner''',
                                                                           ).toString()
                                                                         : 'iVBORw0KGgoAAAANSUhEUgAAAREAAAC4CAMAAADzLiguAAAANlBMVEXp7vG6vsHs8fS2ur3c4eTU2dzm6u3P1Ne4vL/u8/a4vL67v8G0ubzDx8rY3eDEyMvh5unKz9Izr04MAAADb0lEQVR4nO2c63KrIBRGFY1CY4x5/5c93nKiICZGGOvuWj86adowYc0HWxgxSQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOC3oiJwdJ/2oJr6Epy6Sc4qxeTXKtNPfoYfP9NXDj//f0xfv97oX2X6cU4l5pGl6TWNgdbF0b37AnPXUWwMVEd37wvqLKKQNnzm6A5uxcRMSEuWH93DrTRV/8XbaVBnQdFj9u4nm13Vpc+ILk3wy5FCn3LYqHL43hG+9ti0PqmRCNGO2HRMVJlGNqIx8mpakpEQyzRBRlSSd+u0vT0RY8Tkt6rq1mnXcl9fpBjp130DOt2Vk8HI9exG1G16VV81u5qWkBF7Ibxn6SrDSF5ZC7UdqxIRRoyzcZR9P25EGCnsiLRLwK87JMGIqt3NkjdL15VdQxFGSkfIm+v7Irt7jUmovm0f3B3o1Q7pVHuViMjIZeOo6aYdffP8hwQjSePuQq+U33Ee9ikRYcQ4tSar/Z996vMoEWHkue31wTSiJpV6WYkII4myjFS5rz/FdIAtKpFhxJpJqod3Xp3POEtKJFTf7vdGv2KSeYU4F7cLSoRkJFHJvRqcZDr3CnFrkntdIsVIW3CK8tam/ZEbb1+ckrSUEjlG2jeNUsbvw10PjimZf0KSkfVPLAyZxYHzV4woT0LcgSOk1rylWLu7YpaSv5KR9ftvpin5G0ZWhoyjRKIRU1tvF9XbO5JeSgQaMXU1nyrfJmSmRJ6RVkia3iZ/+CAhaVdcRiXijPRCpoPAex3iSYm06qvq+Q7ZZ0NmVDIxIiYjTyGdkv5vG4SINGIm9/32Kfl4yAg1YuppIlolWxIi0Yip7R2ybTdGizNiC9mMFlZr1O6zA8Iysjsh0oy0ZXf36SNRRsxlU1WRb8RcQpw/EmSkuw4JcGJPkJE6wJBJJVXfxXuMdho5d0YwkmDEBSM2GLGJboRaYxs5d0YSjNgZeVRBjoNXYowkTR6GsWkBRgI3jRG7aYzYTWPEbvqkRqI97sCc1MiwaaYfSRGa/JzPH3k+oyYNciEyZ2j4dE8Ac49vhmXHYdCjyOM+68p3QusXY8owm6uL6LPNqz0RlWTXozv3Haq5R5hXW66XMyakxwRb400p/IcNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4FD+AZS0NBe99dfKAAAAAElFTkSuQmCC',
@@ -1121,7 +1120,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                       children: [
                                                                         Text(
                                                                           getJsonField(
-                                                                            carrocelItem,
+                                                                            carrocel2Item,
                                                                             r'''$.descricao''',
                                                                           ).toString(),
                                                                           style:
@@ -1140,7 +1139,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                           dateTimeFormat(
                                                                             'E. dd MMM • HH:mm',
                                                                             functions.strDataParaDateTime(getJsonField(
-                                                                              carrocelItem,
+                                                                              carrocel2Item,
                                                                               r'''$.data''',
                                                                             ).toString()),
                                                                             locale:
@@ -1171,8 +1170,8 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                   _model.carouselController2 ??=
                                                       CarouselController(),
                                               options: CarouselOptions(
-                                                initialPage:
-                                                    min(1, carrocel.length - 1),
+                                                initialPage: min(
+                                                    1, carrocel2.length - 1),
                                                 viewportFraction: 1.0,
                                                 disableCenter: true,
                                                 enlargeCenterPage: true,

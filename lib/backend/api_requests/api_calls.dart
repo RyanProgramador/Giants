@@ -207,6 +207,24 @@ class ListarEventosCall {
         response,
         r'''$.dados[?(@.destaque == 2)]''',
       );
+  static List<String>? dadosDescricaoUm(dynamic response) => (getJsonField(
+        response,
+        r'''$.dados[?(@.destaque == 1)].descricao''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? dadosDescricaoDois(dynamic response) => (getJsonField(
+        response,
+        r'''$.dados[?(@.destaque == 2)].descricao''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
 }
 
 class ListPlaylistCall {
