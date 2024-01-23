@@ -106,6 +106,18 @@ class FFAppState extends ChangeNotifier {
           }).toList() ??
           _eventosLitados;
     });
+    _safeInit(() {
+      _eventosListadosDestaqueDois =
+          prefs.getStringList('ff_eventosListadosDestaqueDois')?.map((x) {
+                try {
+                  return jsonDecode(x);
+                } catch (e) {
+                  print("Can't decode persisted json. Error: $e.");
+                  return {};
+                }
+              }).toList() ??
+              _eventosListadosDestaqueDois;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -368,6 +380,48 @@ class FFAppState extends ChangeNotifier {
     _eventosLitados.insert(_index, _value);
     prefs.setStringList('ff_eventosLitados',
         _eventosLitados.map((x) => jsonEncode(x)).toList());
+  }
+
+  List<dynamic> _eventosListadosDestaqueDois = [];
+  List<dynamic> get eventosListadosDestaqueDois => _eventosListadosDestaqueDois;
+  set eventosListadosDestaqueDois(List<dynamic> _value) {
+    _eventosListadosDestaqueDois = _value;
+    prefs.setStringList('ff_eventosListadosDestaqueDois',
+        _value.map((x) => jsonEncode(x)).toList());
+  }
+
+  void addToEventosListadosDestaqueDois(dynamic _value) {
+    _eventosListadosDestaqueDois.add(_value);
+    prefs.setStringList('ff_eventosListadosDestaqueDois',
+        _eventosListadosDestaqueDois.map((x) => jsonEncode(x)).toList());
+  }
+
+  void removeFromEventosListadosDestaqueDois(dynamic _value) {
+    _eventosListadosDestaqueDois.remove(_value);
+    prefs.setStringList('ff_eventosListadosDestaqueDois',
+        _eventosListadosDestaqueDois.map((x) => jsonEncode(x)).toList());
+  }
+
+  void removeAtIndexFromEventosListadosDestaqueDois(int _index) {
+    _eventosListadosDestaqueDois.removeAt(_index);
+    prefs.setStringList('ff_eventosListadosDestaqueDois',
+        _eventosListadosDestaqueDois.map((x) => jsonEncode(x)).toList());
+  }
+
+  void updateEventosListadosDestaqueDoisAtIndex(
+    int _index,
+    dynamic Function(dynamic) updateFn,
+  ) {
+    _eventosListadosDestaqueDois[_index] =
+        updateFn(_eventosListadosDestaqueDois[_index]);
+    prefs.setStringList('ff_eventosListadosDestaqueDois',
+        _eventosListadosDestaqueDois.map((x) => jsonEncode(x)).toList());
+  }
+
+  void insertAtIndexInEventosListadosDestaqueDois(int _index, dynamic _value) {
+    _eventosListadosDestaqueDois.insert(_index, _value);
+    prefs.setStringList('ff_eventosListadosDestaqueDois',
+        _eventosListadosDestaqueDois.map((x) => jsonEncode(x)).toList());
   }
 }
 

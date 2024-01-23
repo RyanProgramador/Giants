@@ -46,6 +46,13 @@ class _InicioWidgetState extends State<InicioWidget> {
           )!
               .toList()
               .cast<dynamic>();
+          FFAppState().eventosListadosDestaqueDois = getJsonField(
+            (_model.apicallListarEventos?.jsonBody ?? ''),
+            r'''$.dados[?(@.destaque == 2)]''',
+            true,
+          )!
+              .toList()
+              .cast<dynamic>();
         });
       }
     });
@@ -459,7 +466,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                         Text(
                                                                           getJsonField(
                                                                             carrocel1Item,
-                                                                            r'''$.dados[?(@.destaque == 1)].descricao''',
+                                                                            r'''$.descricao''',
                                                                           ).toString(),
                                                                           style:
                                                                               TextStyle(
