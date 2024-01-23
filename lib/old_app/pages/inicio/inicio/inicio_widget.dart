@@ -439,7 +439,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                         Text(
                                                                           getJsonField(
                                                                             carrocelItem,
-                                                                            r'''$.descricao''',
+                                                                            r'''$.dados[?(@.destaque == 1)].descricao''',
                                                                           ).toString(),
                                                                           style:
                                                                               TextStyle(
