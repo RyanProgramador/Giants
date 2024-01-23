@@ -12,6 +12,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'menu_model.dart';
 export 'menu_model.dart';
 
@@ -511,7 +512,8 @@ class _MenuWidgetState extends State<MenuWidget> {
                                   enableDrag: false,
                                   context: context,
                                   builder: (context) {
-                                    return GestureDetector(
+                                    return WebViewAware(
+                                        child: GestureDetector(
                                       onTap: () => _model
                                               .unfocusNode.canRequestFocus
                                           ? FocusScope.of(context)
@@ -522,7 +524,7 @@ class _MenuWidgetState extends State<MenuWidget> {
                                             MediaQuery.viewInsetsOf(context),
                                         child: TermosDeUsoCadWidget(),
                                       ),
-                                    );
+                                    ));
                                   },
                                 ).then((value) => safeSetState(() {}));
                               },
@@ -659,9 +661,9 @@ class _MenuWidgetState extends State<MenuWidget> {
                                   FFAppState().UsrEmail = '';
                                   FFAppState().UsrNome = '';
                                   FFAppState().UsrPicture = '';
+                                  FFAppState().UsrClass = '';
                                   FFAppState().usrID = '';
                                   FFAppState().PorcentagemCFG = 0.0;
-                                  FFAppState().UsrClass = 0;
                                 });
 
                                 context.goNamed(

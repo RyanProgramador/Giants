@@ -11,6 +11,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 
 class TelaLoginModel extends FlutterFlowModel<TelaLoginWidget> {
   ///  State fields for stateful widgets in this page.
@@ -18,6 +19,8 @@ class TelaLoginModel extends FlutterFlowModel<TelaLoginWidget> {
   final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - lembrarSenha] action in TelaLogin widget.
   bool? lembrarSenha;
+  // Stores action output result for [Backend Call - API (Login)] action in TelaLogin widget.
+  ApiCallResponse? loginLembrarSenha;
   // State field(s) for email widget.
   FocusNode? emailFocusNode;
   TextEditingController? emailController;

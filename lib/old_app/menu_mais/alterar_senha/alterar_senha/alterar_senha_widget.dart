@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'alterar_senha_model.dart';
 export 'alterar_senha_model.dart';
 
@@ -510,7 +511,8 @@ class _AlterarSenhaWidgetState extends State<AlterarSenhaWidget> {
                                                     context: context,
                                                     builder:
                                                         (alertDialogContext) {
-                                                      return AlertDialog(
+                                                      return WebViewAware(
+                                                          child: AlertDialog(
                                                         title: Text(
                                                             AlterarSenhaCall
                                                                 .msgAlterarSenha(
@@ -526,7 +528,7 @@ class _AlterarSenhaWidgetState extends State<AlterarSenhaWidget> {
                                                             child: Text('Ok'),
                                                           ),
                                                         ],
-                                                      );
+                                                      ));
                                                     },
                                                   );
 
@@ -551,7 +553,8 @@ class _AlterarSenhaWidgetState extends State<AlterarSenhaWidget> {
                                                     context: context,
                                                     builder:
                                                         (alertDialogContext) {
-                                                      return AlertDialog(
+                                                      return WebViewAware(
+                                                          child: AlertDialog(
                                                         title: Text('Ops!'),
                                                         content: Text(
                                                             AlterarSenhaCall
@@ -568,7 +571,7 @@ class _AlterarSenhaWidgetState extends State<AlterarSenhaWidget> {
                                                             child: Text('Ok'),
                                                           ),
                                                         ],
-                                                      );
+                                                      ));
                                                     },
                                                   );
                                                   if (_shouldSetState)
@@ -580,7 +583,8 @@ class _AlterarSenhaWidgetState extends State<AlterarSenhaWidget> {
                                                   context: context,
                                                   builder:
                                                       (alertDialogContext) {
-                                                    return AlertDialog(
+                                                    return WebViewAware(
+                                                        child: AlertDialog(
                                                       title: Text('Ops!'),
                                                       content: Text(
                                                           'As novas senhas não são iguais!'),
@@ -592,7 +596,7 @@ class _AlterarSenhaWidgetState extends State<AlterarSenhaWidget> {
                                                           child: Text('Ok'),
                                                         ),
                                                       ],
-                                                    );
+                                                    ));
                                                   },
                                                 );
                                                 if (_shouldSetState)
@@ -603,7 +607,8 @@ class _AlterarSenhaWidgetState extends State<AlterarSenhaWidget> {
                                               await showDialog(
                                                 context: context,
                                                 builder: (alertDialogContext) {
-                                                  return AlertDialog(
+                                                  return WebViewAware(
+                                                      child: AlertDialog(
                                                     title: Text('Ops!'),
                                                     content: Text(
                                                         'Preencha todos os campos!'),
@@ -615,7 +620,7 @@ class _AlterarSenhaWidgetState extends State<AlterarSenhaWidget> {
                                                         child: Text('Ok'),
                                                       ),
                                                     ],
-                                                  );
+                                                  ));
                                                 },
                                               );
                                               if (_shouldSetState)

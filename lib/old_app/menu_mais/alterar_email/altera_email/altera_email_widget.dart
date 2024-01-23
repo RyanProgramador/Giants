@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'altera_email_model.dart';
 export 'altera_email_model.dart';
 
@@ -332,7 +333,8 @@ class _AlteraEmailWidgetState extends State<AlteraEmailWidget> {
                                               await showDialog(
                                                 context: context,
                                                 builder: (alertDialogContext) {
-                                                  return AlertDialog(
+                                                  return WebViewAware(
+                                                      child: AlertDialog(
                                                     title: Text('Oba!'),
                                                     content: Text(RedefinirSenhaCall
                                                         .mensagemRetornoRedefinirSenha(
@@ -348,7 +350,7 @@ class _AlteraEmailWidgetState extends State<AlteraEmailWidget> {
                                                         child: Text('Ok'),
                                                       ),
                                                     ],
-                                                  );
+                                                  ));
                                                 },
                                               );
                                               setState(() {
@@ -363,7 +365,8 @@ class _AlteraEmailWidgetState extends State<AlteraEmailWidget> {
                                               await showDialog(
                                                 context: context,
                                                 builder: (alertDialogContext) {
-                                                  return AlertDialog(
+                                                  return WebViewAware(
+                                                      child: AlertDialog(
                                                     title: Text('Ops!'),
                                                     content: Text(RedefinirSenhaCall
                                                         .mensagemRetornoRedefinirSenha(
@@ -379,7 +382,7 @@ class _AlteraEmailWidgetState extends State<AlteraEmailWidget> {
                                                         child: Text('Ok'),
                                                       ),
                                                     ],
-                                                  );
+                                                  ));
                                                 },
                                               );
                                               if (_shouldSetState)

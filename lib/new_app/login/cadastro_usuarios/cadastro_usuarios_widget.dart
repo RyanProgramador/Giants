@@ -9,6 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'cadastro_usuarios_model.dart';
 export 'cadastro_usuarios_model.dart';
 
@@ -570,7 +571,8 @@ class _CadastroUsuariosWidgetState extends State<CadastroUsuariosWidget> {
                                                         0.0, 0.0)
                                                     .resolve(Directionality.of(
                                                         context)),
-                                                child: GestureDetector(
+                                                child: WebViewAware(
+                                                    child: GestureDetector(
                                                   onTap: () => _model
                                                           .unfocusNode
                                                           .canRequestFocus
@@ -580,7 +582,7 @@ class _CadastroUsuariosWidgetState extends State<CadastroUsuariosWidget> {
                                                       : FocusScope.of(context)
                                                           .unfocus(),
                                                   child: TermosDeUsoCadWidget(),
-                                                ),
+                                                )),
                                               );
                                             },
                                           ).then((value) => setState(() {}));
@@ -632,7 +634,8 @@ class _CadastroUsuariosWidgetState extends State<CadastroUsuariosWidget> {
                                       await showDialog(
                                         context: context,
                                         builder: (alertDialogContext) {
-                                          return AlertDialog(
+                                          return WebViewAware(
+                                              child: AlertDialog(
                                             title: Text('Oba!'),
                                             content: Text(CadastroUsuariosCall
                                                 .mensagemCadastroUsr(
@@ -645,7 +648,7 @@ class _CadastroUsuariosWidgetState extends State<CadastroUsuariosWidget> {
                                                 child: Text('Ok'),
                                               ),
                                             ],
-                                          );
+                                          ));
                                         },
                                       );
 
@@ -665,7 +668,8 @@ class _CadastroUsuariosWidgetState extends State<CadastroUsuariosWidget> {
                                       await showDialog(
                                         context: context,
                                         builder: (alertDialogContext) {
-                                          return AlertDialog(
+                                          return WebViewAware(
+                                              child: AlertDialog(
                                             title: Text('Ops!'),
                                             content: Text(CadastroUsuariosCall
                                                 .mensagemCadastroUsr(
@@ -678,7 +682,7 @@ class _CadastroUsuariosWidgetState extends State<CadastroUsuariosWidget> {
                                                 child: Text('Ok'),
                                               ),
                                             ],
-                                          );
+                                          ));
                                         },
                                       );
                                     }
@@ -686,7 +690,8 @@ class _CadastroUsuariosWidgetState extends State<CadastroUsuariosWidget> {
                                     await showDialog(
                                       context: context,
                                       builder: (alertDialogContext) {
-                                        return AlertDialog(
+                                        return WebViewAware(
+                                            child: AlertDialog(
                                           title: Text('Ops!'),
                                           content:
                                               Text('Preencha todos os campos'),
@@ -697,7 +702,7 @@ class _CadastroUsuariosWidgetState extends State<CadastroUsuariosWidget> {
                                               child: Text('Ok'),
                                             ),
                                           ],
-                                        );
+                                        ));
                                       },
                                     );
                                   }
@@ -705,7 +710,8 @@ class _CadastroUsuariosWidgetState extends State<CadastroUsuariosWidget> {
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
-                                      return AlertDialog(
+                                      return WebViewAware(
+                                          child: AlertDialog(
                                         title: Text('Ops!'),
                                         content: Text(
                                             'Você deve concordar com os termos para poder se cadastrar'),
@@ -716,7 +722,7 @@ class _CadastroUsuariosWidgetState extends State<CadastroUsuariosWidget> {
                                             child: Text('Ok'),
                                           ),
                                         ],
-                                      );
+                                      ));
                                     },
                                   );
                                   if (_shouldSetState) setState(() {});

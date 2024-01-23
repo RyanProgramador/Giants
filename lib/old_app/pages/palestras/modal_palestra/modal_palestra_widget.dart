@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_youtube_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -121,6 +122,16 @@ class _ModalPalestraWidgetState extends State<ModalPalestraWidget> {
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
+                  FlutterFlowYoutubePlayer(
+                    url: '${widget.urlVideo}',
+                    width: double.infinity,
+                    height: double.infinity,
+                    autoPlay: false,
+                    looping: true,
+                    mute: false,
+                    showControls: true,
+                    showFullScreen: true,
+                  ),
                   Expanded(
                     child: Padding(
                       padding:

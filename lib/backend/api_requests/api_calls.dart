@@ -55,8 +55,8 @@ class LoginCall {
         response,
         r'''$.picture''',
       ));
-  static double? classificacaoLogin(dynamic response) =>
-      castToType<double>(getJsonField(
+  static int? classificacaoLogin(dynamic response) =>
+      castToType<int>(getJsonField(
         response,
         r'''$.classificacao''',
       ));
@@ -64,7 +64,7 @@ class LoginCall {
         response,
         r'''$.message''',
       ));
-  static double? iDLogin(dynamic response) => castToType<double>(getJsonField(
+  static int? iDLogin(dynamic response) => castToType<int>(getJsonField(
         response,
         r'''$.id''',
       ));

@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'giants_fotos_model.dart';
 export 'giants_fotos_model.dart';
 
@@ -282,7 +283,8 @@ class _GiantsFotosWidgetState extends State<GiantsFotosWidget> {
                                           enableDrag: false,
                                           context: context,
                                           builder: (context) {
-                                            return GestureDetector(
+                                            return WebViewAware(
+                                                child: GestureDetector(
                                               onTap: () => _model.unfocusNode
                                                       .canRequestFocus
                                                   ? FocusScope.of(context)
@@ -310,7 +312,7 @@ class _GiantsFotosWidgetState extends State<GiantsFotosWidget> {
                                                   ),
                                                 ),
                                               ),
-                                            );
+                                            ));
                                           },
                                         ).then((value) => safeSetState(() {}));
                                       },

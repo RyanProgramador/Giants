@@ -203,7 +203,7 @@ class _AreaGiantsWidgetState extends State<AreaGiantsWidget> {
                       ),
                     ),
                   ),
-                if (FFAppState().UsrClass != 4)
+                if (FFAppState().UsrClass != '4')
                   Expanded(
                     flex: 10,
                     child: Container(
@@ -704,7 +704,7 @@ class _AreaGiantsWidgetState extends State<AreaGiantsWidget> {
                       ),
                     ),
                   ),
-                if (FFAppState().UsrClass == 4)
+                if (FFAppState().UsrClass == '4')
                   Expanded(
                     flex: 10,
                     child: Align(

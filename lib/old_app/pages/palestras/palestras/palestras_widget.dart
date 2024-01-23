@@ -16,6 +16,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'palestras_model.dart';
 export 'palestras_model.dart';
 
@@ -345,7 +346,9 @@ class _PalestrasWidgetState extends State<PalestrasWidget>
                                                       enableDrag: false,
                                                       context: context,
                                                       builder: (context) {
-                                                        return GestureDetector(
+                                                        return WebViewAware(
+                                                            child:
+                                                                GestureDetector(
                                                           onTap: () => _model
                                                                   .unfocusNode
                                                                   .canRequestFocus
@@ -380,7 +383,7 @@ class _PalestrasWidgetState extends State<PalestrasWidget>
                                                               ).toString(),
                                                             ),
                                                           ),
-                                                        );
+                                                        ));
                                                       },
                                                     ).then((value) =>
                                                         safeSetState(() {}));
@@ -661,7 +664,9 @@ class _PalestrasWidgetState extends State<PalestrasWidget>
                                                       enableDrag: false,
                                                       context: context,
                                                       builder: (context) {
-                                                        return GestureDetector(
+                                                        return WebViewAware(
+                                                            child:
+                                                                GestureDetector(
                                                           onTap: () => _model
                                                                   .unfocusNode
                                                                   .canRequestFocus
@@ -696,7 +701,7 @@ class _PalestrasWidgetState extends State<PalestrasWidget>
                                                               ).toString(),
                                                             ),
                                                           ),
-                                                        );
+                                                        ));
                                                       },
                                                     ).then((value) =>
                                                         safeSetState(() {}));
@@ -979,7 +984,9 @@ class _PalestrasWidgetState extends State<PalestrasWidget>
                                                       enableDrag: false,
                                                       context: context,
                                                       builder: (context) {
-                                                        return GestureDetector(
+                                                        return WebViewAware(
+                                                            child:
+                                                                GestureDetector(
                                                           onTap: () => _model
                                                                   .unfocusNode
                                                                   .canRequestFocus
@@ -1014,7 +1021,7 @@ class _PalestrasWidgetState extends State<PalestrasWidget>
                                                               ).toString(),
                                                             ),
                                                           ),
-                                                        );
+                                                        ));
                                                       },
                                                     ).then((value) =>
                                                         safeSetState(() {}));
@@ -1194,7 +1201,9 @@ class _PalestrasWidgetState extends State<PalestrasWidget>
                                                       enableDrag: false,
                                                       context: context,
                                                       builder: (context) {
-                                                        return GestureDetector(
+                                                        return WebViewAware(
+                                                            child:
+                                                                GestureDetector(
                                                           onTap: () => _model
                                                                   .unfocusNode
                                                                   .canRequestFocus
@@ -1229,7 +1238,7 @@ class _PalestrasWidgetState extends State<PalestrasWidget>
                                                               ).toString(),
                                                             ),
                                                           ),
-                                                        );
+                                                        ));
                                                       },
                                                     ).then((value) =>
                                                         safeSetState(() {}));

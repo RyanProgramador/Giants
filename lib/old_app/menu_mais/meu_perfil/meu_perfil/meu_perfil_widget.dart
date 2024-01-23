@@ -12,6 +12,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'meu_perfil_model.dart';
 export 'meu_perfil_model.dart';
 
@@ -156,7 +157,8 @@ class _MeuPerfilWidgetState extends State<MeuPerfilWidget>
               await showDialog(
                 context: context,
                 builder: (alertDialogContext) {
-                  return AlertDialog(
+                  return WebViewAware(
+                      child: AlertDialog(
                     title: Text(getJsonField(
                       (_model.resultadoInserirCadastroGeral?.jsonBody ?? ''),
                       r'''$.message''',
@@ -167,7 +169,7 @@ class _MeuPerfilWidgetState extends State<MeuPerfilWidget>
                         child: Text('Ok'),
                       ),
                     ],
-                  );
+                  ));
                 },
               );
             } else {
@@ -375,7 +377,9 @@ class _MeuPerfilWidgetState extends State<MeuPerfilWidget>
                                                               context: context,
                                                               builder:
                                                                   (context) {
-                                                                return GestureDetector(
+                                                                return WebViewAware(
+                                                                    child:
+                                                                        GestureDetector(
                                                                   onTap: () => _model
                                                                           .unfocusNode
                                                                           .canRequestFocus
@@ -394,7 +398,7 @@ class _MeuPerfilWidgetState extends State<MeuPerfilWidget>
                                                                     child:
                                                                         GaleriaouCameraWidget(),
                                                                   ),
-                                                                );
+                                                                ));
                                                               },
                                                             ).then((value) =>
                                                                 safeSetState(

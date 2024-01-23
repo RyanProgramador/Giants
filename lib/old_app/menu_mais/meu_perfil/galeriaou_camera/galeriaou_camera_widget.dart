@@ -10,6 +10,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'galeriaou_camera_model.dart';
 export 'galeriaou_camera_model.dart';
 
@@ -137,7 +138,8 @@ class _GaleriaouCameraWidgetState extends State<GaleriaouCameraWidget>
                         await showDialog(
                           context: context,
                           builder: (alertDialogContext) {
-                            return AlertDialog(
+                            return WebViewAware(
+                                child: AlertDialog(
                               content: Text(getJsonField(
                                 (_model.retornoTrocaImagem?.jsonBody ?? ''),
                                 r'''$.message''',
@@ -149,7 +151,7 @@ class _GaleriaouCameraWidgetState extends State<GaleriaouCameraWidget>
                                   child: Text('Ok'),
                                 ),
                               ],
-                            );
+                            ));
                           },
                         );
                         setState(() {
@@ -160,7 +162,8 @@ class _GaleriaouCameraWidgetState extends State<GaleriaouCameraWidget>
                         await showDialog(
                           context: context,
                           builder: (alertDialogContext) {
-                            return AlertDialog(
+                            return WebViewAware(
+                                child: AlertDialog(
                               title: Text('Ops!'),
                               content: Text(
                                   (_model.retornoTrocaImagem?.bodyText ?? '')),
@@ -171,7 +174,7 @@ class _GaleriaouCameraWidgetState extends State<GaleriaouCameraWidget>
                                   child: Text('Ok'),
                                 ),
                               ],
-                            );
+                            ));
                           },
                         );
                         if (_shouldSetState) setState(() {});
@@ -225,7 +228,8 @@ class _GaleriaouCameraWidgetState extends State<GaleriaouCameraWidget>
                         await showDialog(
                           context: context,
                           builder: (alertDialogContext) {
-                            return AlertDialog(
+                            return WebViewAware(
+                                child: AlertDialog(
                               content: Text(getJsonField(
                                 (_model.retornoTrocaImagemGaleria?.jsonBody ??
                                     ''),
@@ -238,7 +242,7 @@ class _GaleriaouCameraWidgetState extends State<GaleriaouCameraWidget>
                                   child: Text('Ok'),
                                 ),
                               ],
-                            );
+                            ));
                           },
                         );
                         setState(() {
@@ -249,7 +253,8 @@ class _GaleriaouCameraWidgetState extends State<GaleriaouCameraWidget>
                         await showDialog(
                           context: context,
                           builder: (alertDialogContext) {
-                            return AlertDialog(
+                            return WebViewAware(
+                                child: AlertDialog(
                               title: Text('Ops!'),
                               content: Text(
                                   (_model.retornoTrocaImagemGaleria?.bodyText ??
@@ -261,7 +266,7 @@ class _GaleriaouCameraWidgetState extends State<GaleriaouCameraWidget>
                                   child: Text('Ok'),
                                 ),
                               ],
-                            );
+                            ));
                           },
                         );
                         if (_shouldSetState) setState(() {});

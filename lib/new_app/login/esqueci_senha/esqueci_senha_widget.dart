@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'esqueci_senha_model.dart';
 export 'esqueci_senha_model.dart';
 
@@ -263,7 +264,8 @@ class _EsqueciSenhaWidgetState extends State<EsqueciSenhaWidget> {
                                       await showDialog(
                                         context: context,
                                         builder: (alertDialogContext) {
-                                          return AlertDialog(
+                                          return WebViewAware(
+                                              child: AlertDialog(
                                             title: Text('Oba!'),
                                             content: Text(EsqueciSenhaCall
                                                 .msgEsqueciSenha(
@@ -277,7 +279,7 @@ class _EsqueciSenhaWidgetState extends State<EsqueciSenhaWidget> {
                                                 child: Text('Ok'),
                                               ),
                                             ],
-                                          );
+                                          ));
                                         },
                                       );
 
@@ -296,7 +298,8 @@ class _EsqueciSenhaWidgetState extends State<EsqueciSenhaWidget> {
                                       await showDialog(
                                         context: context,
                                         builder: (alertDialogContext) {
-                                          return AlertDialog(
+                                          return WebViewAware(
+                                              child: AlertDialog(
                                             title: Text('Ops!'),
                                             content: Text(EsqueciSenhaCall
                                                 .msgEsqueciSenha(
@@ -310,7 +313,7 @@ class _EsqueciSenhaWidgetState extends State<EsqueciSenhaWidget> {
                                                 child: Text('Ok'),
                                               ),
                                             ],
-                                          );
+                                          ));
                                         },
                                       );
                                     }

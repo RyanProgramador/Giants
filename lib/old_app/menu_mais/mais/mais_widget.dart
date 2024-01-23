@@ -12,6 +12,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'mais_model.dart';
 export 'mais_model.dart';
 
@@ -113,11 +114,12 @@ class _MaisWidgetState extends State<MaisWidget> {
                             highlightColor: Colors.transparent,
                             onTap: () async {
                               var _shouldSetState = false;
-                              if (FFAppState().UsrClass == 5) {
+                              if (FFAppState().UsrClass == '5') {
                                 await showDialog(
                                   context: context,
                                   builder: (alertDialogContext) {
-                                    return AlertDialog(
+                                    return WebViewAware(
+                                        child: AlertDialog(
                                       title: Text('Sinto muito!'),
                                       content: Text(
                                           'Para atualizar suas informações de Staff acesse o portal'),
@@ -128,7 +130,7 @@ class _MaisWidgetState extends State<MaisWidget> {
                                           child: Text('Ok'),
                                         ),
                                       ],
-                                    );
+                                    ));
                                   },
                                 );
                                 if (_shouldSetState) setState(() {});
@@ -320,7 +322,7 @@ class _MaisWidgetState extends State<MaisWidget> {
                                   ),
                                 ),
                               ),
-                              if (FFAppState().UsrClass != 5)
+                              if (FFAppState().UsrClass != '5')
                                 Padding(
                                   padding: EdgeInsets.all(8.0),
                                   child: InkWell(
@@ -425,7 +427,7 @@ class _MaisWidgetState extends State<MaisWidget> {
                                     ),
                                   ),
                                 ),
-                              if (FFAppState().UsrClass != 5)
+                              if (FFAppState().UsrClass != '5')
                                 Padding(
                                   padding: EdgeInsets.all(8.0),
                                   child: InkWell(
@@ -497,7 +499,8 @@ class _MaisWidgetState extends State<MaisWidget> {
                                       enableDrag: false,
                                       context: context,
                                       builder: (context) {
-                                        return GestureDetector(
+                                        return WebViewAware(
+                                            child: GestureDetector(
                                           onTap: () => _model
                                                   .unfocusNode.canRequestFocus
                                               ? FocusScope.of(context)
@@ -510,7 +513,7 @@ class _MaisWidgetState extends State<MaisWidget> {
                                                 context),
                                             child: TermosDeUsoCadWidget(),
                                           ),
-                                        );
+                                        ));
                                       },
                                     ).then((value) => safeSetState(() {}));
                                   },
@@ -548,7 +551,7 @@ class _MaisWidgetState extends State<MaisWidget> {
                                   ),
                                 ),
                               ),
-                              if (FFAppState().UsrClass != 5)
+                              if (FFAppState().UsrClass != '5')
                                 Padding(
                                   padding: EdgeInsets.all(8.0),
                                   child: InkWell(
@@ -606,7 +609,7 @@ class _MaisWidgetState extends State<MaisWidget> {
                                     ),
                                   ),
                                 ),
-                              if (FFAppState().UsrClass != 5)
+                              if (FFAppState().UsrClass != '5')
                                 Padding(
                                   padding: EdgeInsets.all(8.0),
                                   child: InkWell(
@@ -665,7 +668,7 @@ class _MaisWidgetState extends State<MaisWidget> {
                                     ),
                                   ),
                                 ),
-                              if (FFAppState().UsrClass == 5)
+                              if (FFAppState().UsrClass == '5')
                                 Padding(
                                   padding: EdgeInsets.all(8.0),
                                   child: InkWell(
@@ -707,7 +710,8 @@ class _MaisWidgetState extends State<MaisWidget> {
                                         await showDialog(
                                           context: context,
                                           builder: (alertDialogContext) {
-                                            return AlertDialog(
+                                            return WebViewAware(
+                                                child: AlertDialog(
                                               content: Text(getJsonField(
                                                 (_model.confirmapresenca
                                                         ?.jsonBody ??
@@ -722,14 +726,15 @@ class _MaisWidgetState extends State<MaisWidget> {
                                                   child: Text('Ok'),
                                                 ),
                                               ],
-                                            );
+                                            ));
                                           },
                                         );
                                       } else {
                                         await showDialog(
                                           context: context,
                                           builder: (alertDialogContext) {
-                                            return AlertDialog(
+                                            return WebViewAware(
+                                                child: AlertDialog(
                                               title: Text('Ops!'),
                                               content: Text(getJsonField(
                                                 (_model.confirmapresenca
@@ -745,7 +750,7 @@ class _MaisWidgetState extends State<MaisWidget> {
                                                   child: Text('Ok'),
                                                 ),
                                               ],
-                                            );
+                                            ));
                                           },
                                         );
                                         if (_shouldSetState) setState(() {});
@@ -790,7 +795,7 @@ class _MaisWidgetState extends State<MaisWidget> {
                                     ),
                                   ),
                                 ),
-                              if (FFAppState().UsrClass == 5)
+                              if (FFAppState().UsrClass == '5')
                                 Padding(
                                   padding: EdgeInsets.all(8.0),
                                   child: InkWell(
@@ -862,10 +867,9 @@ class _MaisWidgetState extends State<MaisWidget> {
                                       FFAppState().UsrEmail = '';
                                       FFAppState().UsrNome = '';
                                       FFAppState().UsrPicture = '';
+                                      FFAppState().UsrClass = '';
                                       FFAppState().usrID = '';
                                       FFAppState().PorcentagemCFG = 0.0;
-                                      FFAppState().UsrClass =
-                                          FFAppState().UsrClass;
                                     });
 
                                     context.goNamed(

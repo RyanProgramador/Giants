@@ -10,6 +10,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'tela_login_model.dart';
 export 'tela_login_model.dart';
 
@@ -83,6 +84,49 @@ class _TelaLoginWidgetState extends State<TelaLoginWidget>
         getCurrentTimestamp,
         FFAppState().diaDoUltimoAcesso,
       );
+      if (_model.lembrarSenha!) {
+        _model.loginLembrarSenha = await LoginCall.call(
+          email: FFAppState().EmailDeSessao,
+          senha: FFAppState().SenhaSessao,
+        );
+        if (LoginCall.statusLogin(
+          (_model.loginLembrarSenha?.jsonBody ?? ''),
+        )!) {
+          setState(() {
+            FFAppState().UsrEmail = LoginCall.emailLogin(
+              (_model.loginLembrarSenha?.jsonBody ?? ''),
+            )!;
+            FFAppState().UsrNome = LoginCall.nomeLogin(
+              (_model.loginLembrarSenha?.jsonBody ?? ''),
+            )!;
+            FFAppState().UsrPicture = LoginCall.pictureLogin(
+              (_model.loginLembrarSenha?.jsonBody ?? ''),
+            )!;
+            FFAppState().UsrClass = LoginCall.classificacaoLogin(
+              (_model.loginLembrarSenha?.jsonBody ?? ''),
+            )!
+                .toString();
+            FFAppState().usrID = LoginCall.iDLogin(
+              (_model.loginLembrarSenha?.jsonBody ?? ''),
+            )!
+                .toString();
+          });
+
+          context.goNamed(
+            'Inicio',
+            extra: <String, dynamic>{
+              kTransitionInfoKey: TransitionInfo(
+                hasTransition: true,
+                transitionType: PageTransitionType.scale,
+                alignment: Alignment.bottomCenter,
+                duration: Duration(milliseconds: 600),
+              ),
+            },
+          );
+        }
+      } else {
+        return;
+      }
     });
 
     _model.emailController ??= TextEditingController();
@@ -394,6 +438,11 @@ class _TelaLoginWidgetState extends State<TelaLoginWidget>
                                         LoginCall.pictureLogin(
                                       (_model.login?.jsonBody ?? ''),
                                     )!;
+                                    FFAppState().UsrClass =
+                                        LoginCall.classificacaoLogin(
+                                      (_model.login?.jsonBody ?? ''),
+                                    )!
+                                            .toString();
                                     FFAppState().diaDoUltimoAcesso =
                                         getCurrentTimestamp;
                                     FFAppState().EmailDeSessao =
@@ -404,12 +453,11 @@ class _TelaLoginWidgetState extends State<TelaLoginWidget>
                                       (_model.login?.jsonBody ?? ''),
                                     )!
                                         .toString();
-                                    FFAppState().PorcentagemCFG = 12.354;
-                                    FFAppState().UsrClass =
-                                        LoginCall.classificacaoLogin(
-                                      (_model.login?.jsonBody ?? ''),
-                                    )!
-                                            .round();
+                                    FFAppState().PorcentagemCFG =
+                                        PorcentagemCFGCall.porcentagemCFG(
+                                      (_model.retornoPorcentagemCFG?.jsonBody ??
+                                          ''),
+                                    );
                                   });
 
                                   context.goNamed(
@@ -417,7 +465,9 @@ class _TelaLoginWidgetState extends State<TelaLoginWidget>
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
-                                        transitionType: PageTransitionType.fade,
+                                        transitionType:
+                                            PageTransitionType.scale,
+                                        alignment: Alignment.bottomCenter,
                                         duration: Duration(milliseconds: 600),
                                       ),
                                     },
@@ -426,7 +476,8 @@ class _TelaLoginWidgetState extends State<TelaLoginWidget>
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
-                                      return AlertDialog(
+                                      return WebViewAware(
+                                          child: AlertDialog(
                                         title: Text('Ops!'),
                                         content: Text(LoginCall.msgLogin(
                                           (_model.login?.jsonBody ?? ''),
@@ -438,7 +489,7 @@ class _TelaLoginWidgetState extends State<TelaLoginWidget>
                                             child: Text('Ok'),
                                           ),
                                         ],
-                                      );
+                                      ));
                                     },
                                   );
                                 }

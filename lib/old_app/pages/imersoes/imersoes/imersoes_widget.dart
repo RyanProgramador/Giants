@@ -11,6 +11,7 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'imersoes_model.dart';
 export 'imersoes_model.dart';
 
@@ -240,7 +241,8 @@ class _ImersoesWidgetState extends State<ImersoesWidget> {
                                                         0.0, 0.0)
                                                     .resolve(Directionality.of(
                                                         context)),
-                                                child: GestureDetector(
+                                                child: WebViewAware(
+                                                    child: GestureDetector(
                                                   onTap: () => _model
                                                           .unfocusNode
                                                           .canRequestFocus
@@ -288,7 +290,7 @@ class _ImersoesWidgetState extends State<ImersoesWidget> {
                                                       r'''$.even_ou_imer''',
                                                     ).toString(),
                                                   ),
-                                                ),
+                                                )),
                                               );
                                             },
                                           ).then((value) => setState(() {}));
