@@ -1243,7 +1243,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
-                                            Expanded(
+                                            Flexible(
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
@@ -1259,7 +1259,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                       padding: EdgeInsets.zero,
                                                       gridDelegate:
                                                           SliverGridDelegateWithFixedCrossAxisCount(
-                                                        crossAxisCount: 2,
+                                                        crossAxisCount: 3,
                                                         crossAxisSpacing: 10.0,
                                                         mainAxisSpacing: 10.0,
                                                         childAspectRatio: 1.0,
