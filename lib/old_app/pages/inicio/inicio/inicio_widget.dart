@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/old_app/pages/eventos/modal_evento/modal_evento_widget.dart';
+import '/backend/schema/structs/index.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:carousel_slider/carousel_slider.dart';
@@ -155,42 +156,43 @@ class _InicioWidgetState extends State<InicioWidget> {
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     30.0, 8.0, 30.0, 0.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  height: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: Colors.transparent,
-                                    borderRadius: BorderRadius.circular(0.0),
-                                    border: Border.all(
-                                      color: Colors.black,
-                                    ),
+                                child: FutureBuilder<ApiCallResponse>(
+                                  future: ListarEventosCall.call(
+                                    pesId: FFAppState().usrID,
                                   ),
-                                  child: FutureBuilder<ApiCallResponse>(
-                                    future: ListarEventosCall.call(
-                                      pesId: FFAppState().usrID,
-                                    ),
-                                    builder: (context, snapshot) {
-                                      // Customize what your widget looks like when it's loading.
-                                      if (!snapshot.hasData) {
-                                        return Center(
-                                          child: SizedBox(
-                                            width: 50.0,
-                                            height: 50.0,
-                                            child: CircularProgressIndicator(
-                                              valueColor:
-                                                  AlwaysStoppedAnimation<Color>(
-                                                Colors.white,
-                                              ),
+                                  builder: (context, snapshot) {
+                                    // Customize what your widget looks like when it's loading.
+                                    if (!snapshot.hasData) {
+                                      return Center(
+                                        child: SizedBox(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          child: CircularProgressIndicator(
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                              Colors.white,
                                             ),
                                           ),
-                                        );
-                                      }
-                                      final carouselListarEventosResponse =
-                                          snapshot.data!;
-                                      return Builder(
+                                        ),
+                                      );
+                                    }
+                                    final containerListarEventosResponse =
+                                        snapshot.data!;
+                                    return Container(
+                                      width: double.infinity,
+                                      height: double.infinity,
+                                      decoration: BoxDecoration(
+                                        color: Colors.transparent,
+                                        borderRadius:
+                                            BorderRadius.circular(0.0),
+                                        border: Border.all(
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                      child: Builder(
                                         builder: (context) {
                                           final carrocel =
-                                              carouselListarEventosResponse
+                                              containerListarEventosResponse
                                                   .jsonBody
                                                   .toList();
                                           return Container(
@@ -512,9 +514,9 @@ class _InicioWidgetState extends State<InicioWidget> {
                                             ),
                                           );
                                         },
-                                      );
-                                    },
-                                  ),
+                                      ),
+                                    );
+                                  },
                                 ),
                               ),
                             ),
@@ -838,44 +840,55 @@ class _InicioWidgetState extends State<InicioWidget> {
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     30.0, 8.0, 30.0, 0.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  height: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: Colors.transparent,
-                                    borderRadius: BorderRadius.circular(0.0),
-                                    border: Border.all(
-                                      color: Colors.black,
-                                    ),
+                                child: FutureBuilder<ApiCallResponse>(
+                                  future: ListarEventosCall.call(
+                                    pesId: FFAppState().usrID,
                                   ),
-                                  child: FutureBuilder<ApiCallResponse>(
-                                    future: ListarEventosCall.call(
-                                      pesId: FFAppState().usrID,
-                                    ),
-                                    builder: (context, snapshot) {
-                                      // Customize what your widget looks like when it's loading.
-                                      if (!snapshot.hasData) {
-                                        return Center(
-                                          child: SizedBox(
-                                            width: 50.0,
-                                            height: 50.0,
-                                            child: CircularProgressIndicator(
-                                              valueColor:
-                                                  AlwaysStoppedAnimation<Color>(
-                                                Colors.white,
-                                              ),
+                                  builder: (context, snapshot) {
+                                    // Customize what your widget looks like when it's loading.
+                                    if (!snapshot.hasData) {
+                                      return Center(
+                                        child: SizedBox(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          child: CircularProgressIndicator(
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                              Colors.white,
                                             ),
                                           ),
-                                        );
-                                      }
-                                      final carouselListarEventosResponse =
-                                          snapshot.data!;
-                                      return Builder(
+                                        ),
+                                      );
+                                    }
+                                    final containerListarEventosResponse =
+                                        snapshot.data!;
+                                    return Container(
+                                      width: double.infinity,
+                                      height: double.infinity,
+                                      decoration: BoxDecoration(
+                                        color: Colors.transparent,
+                                        borderRadius:
+                                            BorderRadius.circular(0.0),
+                                        border: Border.all(
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                      child: Builder(
                                         builder: (context) {
-                                          final carrocel =
-                                              carouselListarEventosResponse
-                                                  .jsonBody
-                                                  .toList();
+                                          final carrocel = (containerListarEventosResponse
+                                                          .jsonBody
+                                                          .toList()
+                                                          .map<DadosEventosStruct?>(
+                                                              DadosEventosStruct
+                                                                  .maybeFromMap)
+                                                          .toList()
+                                                      as Iterable<
+                                                          DadosEventosStruct?>)
+                                                  .withoutNulls
+                                                  ?.map((e) => e.toMap())
+                                                  .toList()
+                                                  ?.toList() ??
+                                              [];
                                           return Container(
                                             width: double.infinity,
                                             height: 101.0,
@@ -1195,9 +1208,9 @@ class _InicioWidgetState extends State<InicioWidget> {
                                             ),
                                           );
                                         },
-                                      );
-                                    },
-                                  ),
+                                      ),
+                                    );
+                                  },
                                 ),
                               ),
                             ),
