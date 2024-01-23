@@ -7,6 +7,7 @@ import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -30,6 +31,24 @@ class _InicioWidgetState extends State<InicioWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => InicioModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.apicallListarEventos = await ListarEventosCall.call(
+        pesId: FFAppState().usrID,
+      );
+      if ((_model.apicallListarEventos?.succeeded ?? true)) {
+        setState(() {
+          FFAppState().eventosLitados = getJsonField(
+            (_model.apicallListarEventos?.jsonBody ?? ''),
+            r'''$.dados[?(@.destaque == 1)]''',
+            true,
+          )!
+              .toList()
+              .cast<dynamic>();
+        });
+      }
+    });
   }
 
   @override
@@ -1490,6 +1509,11 @@ class _InicioWidgetState extends State<InicioWidget> {
                                             ),
                                           ],
                                         ),
+                                      ),
+                                      Text(
+                                        'Hello World',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium,
                                       ),
                                     ],
                                   ),

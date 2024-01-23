@@ -3,6 +3,7 @@ import '/backend/schema/structs/index.dart';
 import 'backend/api_requests/api_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
+import 'dart:convert';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -93,6 +94,17 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _visualizouVideo =
           prefs.getBool('ff_visualizouVideo') ?? _visualizouVideo;
+    });
+    _safeInit(() {
+      _eventosLitados = prefs.getStringList('ff_eventosLitados')?.map((x) {
+            try {
+              return jsonDecode(x);
+            } catch (e) {
+              print("Can't decode persisted json. Error: $e.");
+              return {};
+            }
+          }).toList() ??
+          _eventosLitados;
     });
   }
 
@@ -315,6 +327,47 @@ class FFAppState extends ChangeNotifier {
   set visualizouVideo(bool _value) {
     _visualizouVideo = _value;
     prefs.setBool('ff_visualizouVideo', _value);
+  }
+
+  List<dynamic> _eventosLitados = [];
+  List<dynamic> get eventosLitados => _eventosLitados;
+  set eventosLitados(List<dynamic> _value) {
+    _eventosLitados = _value;
+    prefs.setStringList(
+        'ff_eventosLitados', _value.map((x) => jsonEncode(x)).toList());
+  }
+
+  void addToEventosLitados(dynamic _value) {
+    _eventosLitados.add(_value);
+    prefs.setStringList('ff_eventosLitados',
+        _eventosLitados.map((x) => jsonEncode(x)).toList());
+  }
+
+  void removeFromEventosLitados(dynamic _value) {
+    _eventosLitados.remove(_value);
+    prefs.setStringList('ff_eventosLitados',
+        _eventosLitados.map((x) => jsonEncode(x)).toList());
+  }
+
+  void removeAtIndexFromEventosLitados(int _index) {
+    _eventosLitados.removeAt(_index);
+    prefs.setStringList('ff_eventosLitados',
+        _eventosLitados.map((x) => jsonEncode(x)).toList());
+  }
+
+  void updateEventosLitadosAtIndex(
+    int _index,
+    dynamic Function(dynamic) updateFn,
+  ) {
+    _eventosLitados[_index] = updateFn(_eventosLitados[_index]);
+    prefs.setStringList('ff_eventosLitados',
+        _eventosLitados.map((x) => jsonEncode(x)).toList());
+  }
+
+  void insertAtIndexInEventosLitados(int _index, dynamic _value) {
+    _eventosLitados.insert(_index, _value);
+    prefs.setStringList('ff_eventosLitados',
+        _eventosLitados.map((x) => jsonEncode(x)).toList());
   }
 }
 

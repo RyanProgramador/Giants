@@ -8,6 +8,7 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'inicio_widget.dart' show InicioWidget;
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,6 +18,8 @@ class InicioModel extends FlutterFlowModel<InicioWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // Stores action output result for [Backend Call - API (ListarEventos)] action in Inicio widget.
+  ApiCallResponse? apicallListarEventos;
   // State field(s) for Carousel widget.
   CarouselController? carouselController1;
 
