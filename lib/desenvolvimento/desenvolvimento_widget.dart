@@ -53,7 +53,7 @@ class _DesenvolvimentoWidgetState extends State<DesenvolvimentoWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: Color(0xFF1F1F1F),
         floatingActionButton: FloatingActionButton(
           onPressed: () async {
             setState(() {
@@ -195,13 +195,14 @@ class _DesenvolvimentoWidgetState extends State<DesenvolvimentoWidget> {
                 ),
                 Builder(
                   builder: (context) {
-                    final asdasd = FFAppState().eventosLitados.toList();
+                    final asdasd =
+                        FFAppState().eventosLitados.map((e) => e).toList();
                     return Column(
                       mainAxisSize: MainAxisSize.max,
                       children: List.generate(asdasd.length, (asdasdIndex) {
                         final asdasdItem = asdasd[asdasdIndex];
                         return Text(
-                          'Hello World',
+                          asdasdItem.toString(),
                           style: FlutterFlowTheme.of(context).bodyMedium,
                         );
                       }),
