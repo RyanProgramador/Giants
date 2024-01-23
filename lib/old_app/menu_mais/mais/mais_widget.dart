@@ -12,7 +12,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'mais_model.dart';
 export 'mais_model.dart';
 
@@ -118,8 +117,7 @@ class _MaisWidgetState extends State<MaisWidget> {
                                 await showDialog(
                                   context: context,
                                   builder: (alertDialogContext) {
-                                    return WebViewAware(
-                                        child: AlertDialog(
+                                    return AlertDialog(
                                       title: Text('Sinto muito!'),
                                       content: Text(
                                           'Para atualizar suas informações de Staff acesse o portal'),
@@ -130,7 +128,7 @@ class _MaisWidgetState extends State<MaisWidget> {
                                           child: Text('Ok'),
                                         ),
                                       ],
-                                    ));
+                                    );
                                   },
                                 );
                                 if (_shouldSetState) setState(() {});
@@ -499,8 +497,7 @@ class _MaisWidgetState extends State<MaisWidget> {
                                       enableDrag: false,
                                       context: context,
                                       builder: (context) {
-                                        return WebViewAware(
-                                            child: GestureDetector(
+                                        return GestureDetector(
                                           onTap: () => _model
                                                   .unfocusNode.canRequestFocus
                                               ? FocusScope.of(context)
@@ -513,7 +510,7 @@ class _MaisWidgetState extends State<MaisWidget> {
                                                 context),
                                             child: TermosDeUsoCadWidget(),
                                           ),
-                                        ));
+                                        );
                                       },
                                     ).then((value) => safeSetState(() {}));
                                   },
@@ -710,8 +707,7 @@ class _MaisWidgetState extends State<MaisWidget> {
                                         await showDialog(
                                           context: context,
                                           builder: (alertDialogContext) {
-                                            return WebViewAware(
-                                                child: AlertDialog(
+                                            return AlertDialog(
                                               content: Text(getJsonField(
                                                 (_model.confirmapresenca
                                                         ?.jsonBody ??
@@ -726,15 +722,14 @@ class _MaisWidgetState extends State<MaisWidget> {
                                                   child: Text('Ok'),
                                                 ),
                                               ],
-                                            ));
+                                            );
                                           },
                                         );
                                       } else {
                                         await showDialog(
                                           context: context,
                                           builder: (alertDialogContext) {
-                                            return WebViewAware(
-                                                child: AlertDialog(
+                                            return AlertDialog(
                                               title: Text('Ops!'),
                                               content: Text(getJsonField(
                                                 (_model.confirmapresenca
@@ -750,7 +745,7 @@ class _MaisWidgetState extends State<MaisWidget> {
                                                   child: Text('Ok'),
                                                 ),
                                               ],
-                                            ));
+                                            );
                                           },
                                         );
                                         if (_shouldSetState) setState(() {});

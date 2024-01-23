@@ -10,7 +10,6 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'eventos_inscrito_model.dart';
 export 'eventos_inscrito_model.dart';
 
@@ -166,8 +165,7 @@ class _EventosInscritoWidgetState extends State<EventosInscritoWidget> {
                                       await showDialog(
                                         context: context,
                                         builder: (alertDialogContext) {
-                                          return WebViewAware(
-                                              child: AlertDialog(
+                                          return AlertDialog(
                                             title: Text('Em desenvolvimento'),
                                             actions: [
                                               TextButton(
@@ -176,7 +174,7 @@ class _EventosInscritoWidgetState extends State<EventosInscritoWidget> {
                                                 child: Text('Ok'),
                                               ),
                                             ],
-                                          ));
+                                          );
                                         },
                                       );
                                     },
@@ -285,8 +283,7 @@ class _EventosInscritoWidgetState extends State<EventosInscritoWidget> {
                                                           .resolve(
                                                               Directionality.of(
                                                                   context)),
-                                                  child: WebViewAware(
-                                                      child: GestureDetector(
+                                                  child: GestureDetector(
                                                     onTap: () => _model
                                                             .unfocusNode
                                                             .canRequestFocus
@@ -329,7 +326,7 @@ class _EventosInscritoWidgetState extends State<EventosInscritoWidget> {
                                                         r'''$.even_ou_imer''',
                                                       ).toString(),
                                                     ),
-                                                  )),
+                                                  ),
                                                 );
                                               },
                                             ).then((value) => setState(() {}));

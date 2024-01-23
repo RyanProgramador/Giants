@@ -12,7 +12,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'modal_evento_model.dart';
 export 'modal_evento_model.dart';
 
@@ -222,8 +221,7 @@ class _ModalEventoWidgetState extends State<ModalEventoWidget> {
                                             enableDrag: false,
                                             context: context,
                                             builder: (context) {
-                                              return WebViewAware(
-                                                  child: Padding(
+                                              return Padding(
                                                 padding:
                                                     MediaQuery.viewInsetsOf(
                                                         context),
@@ -238,7 +236,7 @@ class _ModalEventoWidgetState extends State<ModalEventoWidget> {
                                                   idEvento: '',
                                                   marker: null!,
                                                 ),
-                                              ));
+                                              );
                                             },
                                           ).then(
                                               (value) => safeSetState(() {}));
@@ -371,8 +369,7 @@ class _ModalEventoWidgetState extends State<ModalEventoWidget> {
                                     await showDialog(
                                       context: context,
                                       builder: (alertDialogContext) {
-                                        return WebViewAware(
-                                            child: AlertDialog(
+                                        return AlertDialog(
                                           title: Text('Sinto Muito!'),
                                           content: Text(
                                               'Parece que você não faz parte do grupo RBI acelerador empresárial, entre em contato!'),
@@ -383,7 +380,7 @@ class _ModalEventoWidgetState extends State<ModalEventoWidget> {
                                               child: Text('Ok'),
                                             ),
                                           ],
-                                        ));
+                                        );
                                       },
                                     );
                                     if (_shouldSetState) setState(() {});
@@ -393,8 +390,7 @@ class _ModalEventoWidgetState extends State<ModalEventoWidget> {
                                       await showDialog<bool>(
                                             context: context,
                                             builder: (alertDialogContext) {
-                                              return WebViewAware(
-                                                  child: AlertDialog(
+                                              return AlertDialog(
                                                 title: Text(
                                                     'Deseja se inscrever para esse evento?'),
                                                 actions: [
@@ -413,7 +409,7 @@ class _ModalEventoWidgetState extends State<ModalEventoWidget> {
                                                     child: Text('Confirm'),
                                                   ),
                                                 ],
-                                              ));
+                                              );
                                             },
                                           ) ??
                                           false;
@@ -433,8 +429,7 @@ class _ModalEventoWidgetState extends State<ModalEventoWidget> {
                                       await showDialog(
                                         context: context,
                                         builder: (alertDialogContext) {
-                                          return WebViewAware(
-                                              child: AlertDialog(
+                                          return AlertDialog(
                                             title: Text('Maravilha!'),
                                             content: Text(
                                                 'A equipe GIANTS conta com você!'),
@@ -445,7 +440,7 @@ class _ModalEventoWidgetState extends State<ModalEventoWidget> {
                                                 child: Text('Ok'),
                                               ),
                                             ],
-                                          ));
+                                          );
                                         },
                                       );
                                     } else {
@@ -498,15 +493,14 @@ class _ModalEventoWidgetState extends State<ModalEventoWidget> {
                                     enableDrag: false,
                                     context: context,
                                     builder: (context) {
-                                      return WebViewAware(
-                                          child: Padding(
+                                      return Padding(
                                         padding:
                                             MediaQuery.viewInsetsOf(context),
                                         child: ModalListagemPresencaWidget(
                                           eventoID: widget.idEvento!,
                                           evenOuimer: widget.evenOuImer!,
                                         ),
-                                      ));
+                                      );
                                     },
                                   ).then((value) => safeSetState(() {}));
                                 },
@@ -550,8 +544,7 @@ class _ModalEventoWidgetState extends State<ModalEventoWidget> {
                                     enableDrag: false,
                                     context: context,
                                     builder: (context) {
-                                      return WebViewAware(
-                                          child: Padding(
+                                      return Padding(
                                         padding:
                                             MediaQuery.viewInsetsOf(context),
                                         child: ModalDoQrCodeWidget(
@@ -560,7 +553,7 @@ class _ModalEventoWidgetState extends State<ModalEventoWidget> {
                                           eventoID: widget.idEvento!,
                                           evenOuimer: widget.evenOuImer!,
                                         ),
-                                      ));
+                                      );
                                     },
                                   ).then((value) => safeSetState(() {}));
                                 },
