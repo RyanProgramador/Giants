@@ -453,7 +453,7 @@ class _TelaLoginWidgetState extends State<TelaLoginWidget>
                                       (_model.login?.jsonBody ?? ''),
                                     )!
                                         .toString();
-                                    FFAppState().PorcentagemCFG = 50.0;
+                                    FFAppState().PorcentagemCFG = 50.1;
                                   });
 
                                   context.goNamed(
