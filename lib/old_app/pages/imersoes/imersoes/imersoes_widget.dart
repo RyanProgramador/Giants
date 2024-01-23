@@ -41,6 +41,8 @@ class _ImersoesWidgetState extends State<ImersoesWidget> {
           FFAppState().dataEventosLista = ListarEventosCall.dataListarEvento(
             (_model.resultadoListaEventos?.jsonBody ?? ''),
           )!
+              .map((e) => e.toString())
+              .toList()
               .toList()
               .cast<String>();
         });

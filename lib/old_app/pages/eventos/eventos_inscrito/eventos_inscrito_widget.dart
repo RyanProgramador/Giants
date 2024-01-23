@@ -40,6 +40,8 @@ class _EventosInscritoWidgetState extends State<EventosInscritoWidget> {
           FFAppState().dataEventosLista = ListarEventosCall.dataListarEvento(
             (_model.resultadoListaEventos?.jsonBody ?? ''),
           )!
+              .map((e) => e.toString())
+              .toList()
               .toList()
               .cast<String>();
         });
