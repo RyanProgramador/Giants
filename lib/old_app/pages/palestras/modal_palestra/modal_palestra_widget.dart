@@ -1,6 +1,5 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_youtube_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -122,15 +121,38 @@ class _ModalPalestraWidgetState extends State<ModalPalestraWidget> {
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  FlutterFlowYoutubePlayer(
-                    url: '${widget.urlVideo}',
+                  Container(
                     width: double.infinity,
-                    height: double.infinity,
-                    autoPlay: false,
-                    looping: true,
-                    mute: false,
-                    showControls: true,
-                    showFullScreen: true,
+                    height: 250.0,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF343434),
+                    ),
+                    child: Stack(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: Image.asset(
+                            'assets/images/padro_giants-1-removebg_1_(Traced).png',
+                            width: double.infinity,
+                            height: double.infinity,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Align(
+                          alignment: AlignmentDirectional(0.0, 0.0),
+                          child: Text(
+                            'Estamos passando por problemas técnicos para mostrar seus vídeos, por favor tente novamente mais tarde',
+                            textAlign: TextAlign.center,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Open Sans',
+                                  fontWeight: FontWeight.w600,
+                                ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   Expanded(
                     child: Padding(

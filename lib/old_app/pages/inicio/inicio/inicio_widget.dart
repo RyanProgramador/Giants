@@ -11,7 +11,6 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'inicio_model.dart';
 export 'inicio_model.dart';
 
@@ -230,9 +229,8 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                 .resolve(
                                                                     Directionality.of(
                                                                         context)),
-                                                            child: WebViewAware(
-                                                                child:
-                                                                    GestureDetector(
+                                                            child:
+                                                                GestureDetector(
                                                               onTap: () => _model
                                                                       .unfocusNode
                                                                       .canRequestFocus
@@ -297,7 +295,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                   r'''$.even_ou_imer''',
                                                                 ).toString(),
                                                               ),
-                                                            )),
+                                                            ),
                                                           );
                                                         },
                                                       ).then((value) =>
@@ -636,8 +634,8 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                               Colors.transparent,
                                                                           alignment:
                                                                               AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                          child: WebViewAware(
-                                                                              child: GestureDetector(
+                                                                          child:
+                                                                              GestureDetector(
                                                                             onTap: () => _model.unfocusNode.canRequestFocus
                                                                                 ? FocusScope.of(context).requestFocus(_model.unfocusNode)
                                                                                 : FocusScope.of(context).unfocus(),
@@ -677,7 +675,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                                   ? true
                                                                                   : false,
                                                                             ),
-                                                                          )),
+                                                                          ),
                                                                         );
                                                                       },
                                                                     ).then((value) =>
@@ -915,9 +913,8 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                 .resolve(
                                                                     Directionality.of(
                                                                         context)),
-                                                            child: WebViewAware(
-                                                                child:
-                                                                    GestureDetector(
+                                                            child:
+                                                                GestureDetector(
                                                               onTap: () => _model
                                                                       .unfocusNode
                                                                       .canRequestFocus
@@ -978,7 +975,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                         : false,
                                                                 evenOuImer: '',
                                                               ),
-                                                            )),
+                                                            ),
                                                           );
                                                         },
                                                       ).then((value) =>
@@ -1318,8 +1315,8 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                               Colors.transparent,
                                                                           alignment:
                                                                               AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                          child: WebViewAware(
-                                                                              child: GestureDetector(
+                                                                          child:
+                                                                              GestureDetector(
                                                                             onTap: () => _model.unfocusNode.canRequestFocus
                                                                                 ? FocusScope.of(context).requestFocus(_model.unfocusNode)
                                                                                 : FocusScope.of(context).unfocus(),
@@ -1359,7 +1356,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                                   ? true
                                                                                   : false,
                                                                             ),
-                                                                          )),
+                                                                          ),
                                                                         );
                                                                       },
                                                                     ).then((value) =>

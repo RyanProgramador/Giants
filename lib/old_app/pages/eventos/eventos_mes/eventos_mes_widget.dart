@@ -8,7 +8,6 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'eventos_mes_model.dart';
 export 'eventos_mes_model.dart';
 
@@ -207,8 +206,7 @@ class _EventosMesWidgetState extends State<EventosMesWidget> {
                                                         0.0, 0.0)
                                                     .resolve(Directionality.of(
                                                         context)),
-                                                child: WebViewAware(
-                                                    child: GestureDetector(
+                                                child: GestureDetector(
                                                   onTap: () => _model
                                                           .unfocusNode
                                                           .canRequestFocus
@@ -246,7 +244,7 @@ class _EventosMesWidgetState extends State<EventosMesWidget> {
                                                     ).toString(),
                                                     jaIngressou: false,
                                                   ),
-                                                )),
+                                                ),
                                               );
                                             },
                                           ).then((value) => setState(() {}));

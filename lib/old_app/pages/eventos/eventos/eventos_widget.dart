@@ -14,7 +14,6 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'eventos_model.dart';
 export 'eventos_model.dart';
 
@@ -371,9 +370,7 @@ class _EventosWidgetState extends State<EventosWidget> {
                                                                         Directionality.of(
                                                                             context)),
                                                                 child:
-                                                                    WebViewAware(
-                                                                        child:
-                                                                            GestureDetector(
+                                                                    GestureDetector(
                                                                   onTap: () => _model
                                                                           .unfocusNode
                                                                           .canRequestFocus
@@ -433,7 +430,7 @@ class _EventosWidgetState extends State<EventosWidget> {
                                                                       r'''$.even_ou_imer''',
                                                                     ).toString(),
                                                                   ),
-                                                                )),
+                                                                ),
                                                               );
                                                             },
                                                           ).then((value) =>
@@ -862,9 +859,8 @@ class _EventosWidgetState extends State<EventosWidget> {
                                                                 .resolve(
                                                                     Directionality.of(
                                                                         context)),
-                                                            child: WebViewAware(
-                                                                child:
-                                                                    GestureDetector(
+                                                            child:
+                                                                GestureDetector(
                                                               onTap: () => _model
                                                                       .unfocusNode
                                                                       .canRequestFocus
@@ -926,7 +922,7 @@ class _EventosWidgetState extends State<EventosWidget> {
                                                                   r'''$.even_ou_imer''',
                                                                 ).toString(),
                                                               ),
-                                                            )),
+                                                            ),
                                                           );
                                                         },
                                                       ).then((value) =>
@@ -1374,9 +1370,8 @@ class _EventosWidgetState extends State<EventosWidget> {
                                                                 .resolve(
                                                                     Directionality.of(
                                                                         context)),
-                                                            child: WebViewAware(
-                                                                child:
-                                                                    GestureDetector(
+                                                            child:
+                                                                GestureDetector(
                                                               onTap: () => _model
                                                                       .unfocusNode
                                                                       .canRequestFocus
@@ -1432,7 +1427,7 @@ class _EventosWidgetState extends State<EventosWidget> {
                                                                   r'''$.even_ou_imer''',
                                                                 ).toString(),
                                                               ),
-                                                            )),
+                                                            ),
                                                           );
                                                         },
                                                       ).then((value) =>
@@ -1750,9 +1745,8 @@ class _EventosWidgetState extends State<EventosWidget> {
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                          child: WebViewAware(
-                                                              child:
-                                                                  GestureDetector(
+                                                          child:
+                                                              GestureDetector(
                                                             onTap: () => _model
                                                                     .unfocusNode
                                                                     .canRequestFocus
@@ -1807,7 +1801,7 @@ class _EventosWidgetState extends State<EventosWidget> {
                                                                 r'''$.even_ou_imer''',
                                                               ).toString(),
                                                             ),
-                                                          )),
+                                                          ),
                                                         );
                                                       },
                                                     ).then((value) =>
@@ -2123,9 +2117,7 @@ class _EventosWidgetState extends State<EventosWidget> {
                                                                           Directionality.of(
                                                                               context)),
                                                                   child:
-                                                                      WebViewAware(
-                                                                          child:
-                                                                              GestureDetector(
+                                                                      GestureDetector(
                                                                     onTap: () => _model
                                                                             .unfocusNode
                                                                             .canRequestFocus
@@ -2182,7 +2174,7 @@ class _EventosWidgetState extends State<EventosWidget> {
                                                                         r'''$.even_ou_imer''',
                                                                       ).toString(),
                                                                     ),
-                                                                  )),
+                                                                  ),
                                                                 );
                                                               },
                                                             ).then((value) =>
@@ -2614,9 +2606,7 @@ class _EventosWidgetState extends State<EventosWidget> {
                                                                       Directionality.of(
                                                                           context)),
                                                               child:
-                                                                  WebViewAware(
-                                                                      child:
-                                                                          GestureDetector(
+                                                                  GestureDetector(
                                                                 onTap: () => _model
                                                                         .unfocusNode
                                                                         .canRequestFocus
@@ -2677,7 +2667,7 @@ class _EventosWidgetState extends State<EventosWidget> {
                                                                     r'''$.even_ou_imer''',
                                                                   ).toString(),
                                                                 ),
-                                                              )),
+                                                              ),
                                                             );
                                                           },
                                                         ).then((value) =>

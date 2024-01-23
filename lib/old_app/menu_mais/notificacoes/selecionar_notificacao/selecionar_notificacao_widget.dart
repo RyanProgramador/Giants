@@ -6,7 +6,6 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'selecionar_notificacao_model.dart';
 export 'selecionar_notificacao_model.dart';
 
@@ -277,8 +276,7 @@ class _SelecionarNotificacaoWidgetState
                                                       context: context,
                                                       builder:
                                                           (alertDialogContext) {
-                                                        return WebViewAware(
-                                                            child: AlertDialog(
+                                                        return AlertDialog(
                                                           title: Text(
                                                               'Opção desativada no momento'),
                                                           actions: [
@@ -289,7 +287,7 @@ class _SelecionarNotificacaoWidgetState
                                                               child: Text('Ok'),
                                                             ),
                                                           ],
-                                                        ));
+                                                        );
                                                       },
                                                     );
                                                   } else {
@@ -297,8 +295,7 @@ class _SelecionarNotificacaoWidgetState
                                                       context: context,
                                                       builder:
                                                           (alertDialogContext) {
-                                                        return WebViewAware(
-                                                            child: AlertDialog(
+                                                        return AlertDialog(
                                                           title: Text(
                                                               'Opção desativada no momento'),
                                                           actions: [
@@ -309,7 +306,7 @@ class _SelecionarNotificacaoWidgetState
                                                               child: Text('Ok'),
                                                             ),
                                                           ],
-                                                        ));
+                                                        );
                                                       },
                                                     );
                                                   }
@@ -397,8 +394,7 @@ class _SelecionarNotificacaoWidgetState
                                                       context: context,
                                                       builder:
                                                           (alertDialogContext) {
-                                                        return WebViewAware(
-                                                            child: AlertDialog(
+                                                        return AlertDialog(
                                                           title: Text(
                                                               'Opção desativada no momento'),
                                                           actions: [
@@ -409,7 +405,7 @@ class _SelecionarNotificacaoWidgetState
                                                               child: Text('Ok'),
                                                             ),
                                                           ],
-                                                        ));
+                                                        );
                                                       },
                                                     );
                                                   } else {
@@ -417,8 +413,7 @@ class _SelecionarNotificacaoWidgetState
                                                       context: context,
                                                       builder:
                                                           (alertDialogContext) {
-                                                        return WebViewAware(
-                                                            child: AlertDialog(
+                                                        return AlertDialog(
                                                           title: Text(
                                                               'Opção desativada no momento'),
                                                           actions: [
@@ -429,7 +424,7 @@ class _SelecionarNotificacaoWidgetState
                                                               child: Text('Ok'),
                                                             ),
                                                           ],
-                                                        ));
+                                                        );
                                                       },
                                                     );
                                                   }

@@ -10,7 +10,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'entregaveis_model.dart';
 export 'entregaveis_model.dart';
 
@@ -533,8 +532,7 @@ class _EntregaveisWidgetState extends State<EntregaveisWidget> {
                                               await showDialog(
                                                 context: context,
                                                 builder: (alertDialogContext) {
-                                                  return WebViewAware(
-                                                      child: AlertDialog(
+                                                  return AlertDialog(
                                                     title: Text('Ops!'),
                                                     actions: [
                                                       TextButton(
@@ -544,7 +542,7 @@ class _EntregaveisWidgetState extends State<EntregaveisWidget> {
                                                         child: Text('Ok'),
                                                       ),
                                                     ],
-                                                  ));
+                                                  );
                                                 },
                                               );
                                               if (_shouldSetState)
@@ -559,8 +557,7 @@ class _EntregaveisWidgetState extends State<EntregaveisWidget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return WebViewAware(
-                                                    child: GestureDetector(
+                                                return GestureDetector(
                                                   onTap: () => _model
                                                           .unfocusNode
                                                           .canRequestFocus
@@ -599,7 +596,7 @@ class _EntregaveisWidgetState extends State<EntregaveisWidget> {
                                                       ),
                                                     ),
                                                   ),
-                                                ));
+                                                );
                                               },
                                             ).then(
                                                 (value) => safeSetState(() {}));

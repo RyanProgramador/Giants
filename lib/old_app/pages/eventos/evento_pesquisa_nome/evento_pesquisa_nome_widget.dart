@@ -15,7 +15,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'evento_pesquisa_nome_model.dart';
 export 'evento_pesquisa_nome_model.dart';
 
@@ -364,9 +363,8 @@ class _EventoPesquisaNomeWidgetState extends State<EventoPesquisaNomeWidget>
                                                                 .resolve(
                                                                     Directionality.of(
                                                                         context)),
-                                                            child: WebViewAware(
-                                                                child:
-                                                                    GestureDetector(
+                                                            child:
+                                                                GestureDetector(
                                                               onTap: () => _model
                                                                       .unfocusNode
                                                                       .canRequestFocus
@@ -423,7 +421,7 @@ class _EventoPesquisaNomeWidgetState extends State<EventoPesquisaNomeWidget>
                                                                         ? true
                                                                         : false,
                                                               ),
-                                                            )),
+                                                            ),
                                                           );
                                                         },
                                                       ).then((value) =>

@@ -10,7 +10,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'tela_login_model.dart';
 export 'tela_login_model.dart';
 
@@ -472,8 +471,7 @@ class _TelaLoginWidgetState extends State<TelaLoginWidget>
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
-                                      return WebViewAware(
-                                          child: AlertDialog(
+                                      return AlertDialog(
                                         title: Text('Ops!'),
                                         content: Text(LoginCall.msgLogin(
                                           (_model.login?.jsonBody ?? ''),
@@ -485,7 +483,7 @@ class _TelaLoginWidgetState extends State<TelaLoginWidget>
                                             child: Text('Ok'),
                                           ),
                                         ],
-                                      ));
+                                      );
                                     },
                                   );
                                 }

@@ -15,7 +15,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'imersoes_pesquisa_nome_model.dart';
 export 'imersoes_pesquisa_nome_model.dart';
 
@@ -339,9 +338,8 @@ class _ImersoesPesquisaNomeWidgetState extends State<ImersoesPesquisaNomeWidget>
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                          child: WebViewAware(
-                                                              child:
-                                                                  GestureDetector(
+                                                          child:
+                                                              GestureDetector(
                                                             onTap: () => _model
                                                                     .unfocusNode
                                                                     .canRequestFocus
@@ -398,7 +396,7 @@ class _ImersoesPesquisaNomeWidgetState extends State<ImersoesPesquisaNomeWidget>
                                                                       ? true
                                                                       : false,
                                                             ),
-                                                          )),
+                                                          ),
                                                         );
                                                       },
                                                     ).then((value) =>
