@@ -74,167 +74,172 @@ class _DesenvolvimentoWidgetState extends State<DesenvolvimentoWidget> {
             width: double.infinity,
             height: double.infinity,
             decoration: BoxDecoration(
-              color: Color(0xFF343434),
+              color: Color(0xFF030303),
             ),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                SingleChildScrollView(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Container(
-                        width: double.infinity,
-                        height: 100.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                        ),
-                        child: Builder(
-                          builder: (context) {
-                            final teste =
-                                FFAppState().EventosFavoritos.toList();
-                            return ListView.builder(
-                              padding: EdgeInsets.zero,
-                              scrollDirection: Axis.vertical,
-                              itemCount: teste.length,
-                              itemBuilder: (context, testeIndex) {
-                                final testeItem = teste[testeIndex];
-                                return Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Text(
-                                      testeItem.eventoImersID,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 10.0),
-                                      child: Text(
-                                        testeItem.eventoOuImersao,
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Container(
+                          width: double.infinity,
+                          height: 100.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                          ),
+                          child: Builder(
+                            builder: (context) {
+                              final teste =
+                                  FFAppState().EventosFavoritos.toList();
+                              return ListView.builder(
+                                padding: EdgeInsets.zero,
+                                scrollDirection: Axis.vertical,
+                                itemCount: teste.length,
+                                itemBuilder: (context, testeIndex) {
+                                  final testeItem = teste[testeIndex];
+                                  return Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Text(
+                                        testeItem.eventoImersID,
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium,
                                       ),
-                                    ),
-                                  ],
-                                );
-                              },
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 10.0),
+                                        child: Text(
+                                          testeItem.eventoOuImersao,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium,
+                                        ),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Text(
+                          'Hello World',
+                          style: FlutterFlowTheme.of(context).bodyMedium,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: 100.0,
+                    height: 100.0,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                    ),
+                    child: Builder(
+                      builder: (context) {
+                        final teste2 = FFAppState().PalestrasFavoritas.toList();
+                        return ListView.builder(
+                          padding: EdgeInsets.zero,
+                          scrollDirection: Axis.vertical,
+                          itemCount: teste2.length,
+                          itemBuilder: (context, teste2Index) {
+                            final teste2Item = teste2[teste2Index];
+                            return Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Text(
+                                  teste2Item.id,
+                                  style:
+                                      FlutterFlowTheme.of(context).bodyMedium,
+                                ),
+                              ],
                             );
                           },
-                        ),
-                      ),
-                    ],
+                        );
+                      },
+                    ),
                   ),
-                ),
-                SingleChildScrollView(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Text(
-                        'Hello World',
-                        style: FlutterFlowTheme.of(context).bodyMedium,
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  width: 100.0,
-                  height: 100.0,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                  ),
-                  child: Builder(
-                    builder: (context) {
-                      final teste2 = FFAppState().PalestrasFavoritas.toList();
-                      return ListView.builder(
-                        padding: EdgeInsets.zero,
-                        scrollDirection: Axis.vertical,
-                        itemCount: teste2.length,
-                        itemBuilder: (context, teste2Index) {
-                          final teste2Item = teste2[teste2Index];
-                          return Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Text(
-                                teste2Item.id,
-                                style: FlutterFlowTheme.of(context).bodyMedium,
+                  FFButtonWidget(
+                    onPressed: () async {
+                      setState(() {
+                        FFAppState().visualizouVideo = false;
+                      });
+                    },
+                    text: 'Retoma video',
+                    options: FFButtonOptions(
+                      height: 40.0,
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                      iconPadding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      color: FlutterFlowTheme.of(context).primary,
+                      textStyle:
+                          FlutterFlowTheme.of(context).titleSmall.override(
+                                fontFamily: 'Open Sans',
+                                color: Colors.white,
                               ),
-                            ],
-                          );
-                        },
+                      elevation: 3.0,
+                      borderSide: BorderSide(
+                        color: Colors.transparent,
+                        width: 1.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                  ),
+                  Builder(
+                    builder: (context) {
+                      final asdasd =
+                          FFAppState().eventosLitados.map((e) => e).toList();
+                      return SingleChildScrollView(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: List.generate(asdasd.length, (asdasdIndex) {
+                            final asdasdItem = asdasd[asdasdIndex];
+                            return Text(
+                              getJsonField(
+                                asdasdItem,
+                                r'''$.descricao''',
+                              ).toString(),
+                              style: FlutterFlowTheme.of(context).bodyMedium,
+                            );
+                          }),
+                        ),
                       );
                     },
                   ),
-                ),
-                FFButtonWidget(
-                  onPressed: () async {
-                    setState(() {
-                      FFAppState().visualizouVideo = false;
-                    });
-                  },
-                  text: 'Retoma video',
-                  options: FFButtonOptions(
-                    height: 40.0,
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                    iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
-                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Open Sans',
-                          color: Colors.white,
+                  Builder(
+                    builder: (context) {
+                      final asdasd2 = FFAppState()
+                          .eventosListadosDestaqueDois
+                          .map((e) => e)
+                          .toList();
+                      return SingleChildScrollView(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children:
+                              List.generate(asdasd2.length, (asdasd2Index) {
+                            final asdasd2Item = asdasd2[asdasd2Index];
+                            return Text(
+                              asdasd2Item.toString(),
+                              style: FlutterFlowTheme.of(context).bodyMedium,
+                            );
+                          }),
                         ),
-                    elevation: 3.0,
-                    borderSide: BorderSide(
-                      color: Colors.transparent,
-                      width: 1.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
+                      );
+                    },
                   ),
-                ),
-                Builder(
-                  builder: (context) {
-                    final asdasd =
-                        FFAppState().eventosLitados.map((e) => e).toList();
-                    return SingleChildScrollView(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: List.generate(asdasd.length, (asdasdIndex) {
-                          final asdasdItem = asdasd[asdasdIndex];
-                          return Text(
-                            getJsonField(
-                              asdasdItem,
-                              r'''$.descricao''',
-                            ).toString(),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
-                          );
-                        }),
-                      ),
-                    );
-                  },
-                ),
-                Builder(
-                  builder: (context) {
-                    final asdasd2 = FFAppState()
-                        .eventosListadosDestaqueDois
-                        .map((e) => e)
-                        .toList();
-                    return SingleChildScrollView(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: List.generate(asdasd2.length, (asdasd2Index) {
-                          final asdasd2Item = asdasd2[asdasd2Index];
-                          return Text(
-                            asdasd2Item.toString(),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
-                          );
-                        }),
-                      ),
-                    );
-                  },
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
