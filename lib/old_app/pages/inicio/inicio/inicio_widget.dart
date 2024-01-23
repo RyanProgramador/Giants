@@ -209,11 +209,10 @@ class _InicioWidgetState extends State<InicioWidget> {
                                       ),
                                       child: Builder(
                                         builder: (context) {
-                                          final carrocel1 = ListarEventosCall
-                                              .dadosJsonDestaqueUM(
-                                            containerListarEventosResponse
-                                                .jsonBody,
-                                          ).toList();
+                                          final carrocel1 = FFAppState()
+                                              .eventosLitados
+                                              .map((e) => e)
+                                              .toList();
                                           return Container(
                                             width: double.infinity,
                                             height: 101.0,
@@ -896,6 +895,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                         builder: (context) {
                                           final carrocel2 = FFAppState()
                                               .eventosLitados
+                                              .map((e) => e)
                                               .toList();
                                           return Container(
                                             width: double.infinity,
@@ -1139,7 +1139,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                         Text(
                                                                           getJsonField(
                                                                             carrocel2Item,
-                                                                            r'''$.dados[?(@.destaque == 1)].descricao''',
+                                                                            r'''$.descricao''',
                                                                           ).toString(),
                                                                           style:
                                                                               TextStyle(
@@ -1158,7 +1158,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                             'E. dd MMM • HH:mm',
                                                                             functions.strDataParaDateTime(getJsonField(
                                                                               carrocel2Item,
-                                                                              r'''$.dados[?(@.destaque == 1)].data''',
+                                                                              r'''$.data''',
                                                                             ).toString()),
                                                                             locale:
                                                                                 FFLocalizations.of(context).languageCode,
@@ -1507,14 +1507,6 @@ class _InicioWidgetState extends State<InicioWidget> {
                                             ),
                                           ],
                                         ),
-                                      ),
-                                      Text(
-                                        FFAppState()
-                                            .eventosLitados
-                                            .first
-                                            .toString(),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
                                       ),
                                     ],
                                   ),
