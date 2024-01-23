@@ -873,11 +873,10 @@ class _InicioWidgetState extends State<InicioWidget> {
                                           snapshot.data!;
                                       return Builder(
                                         builder: (context) {
-                                          final carrocel = getJsonField(
-                                            carouselListarEventosResponse
-                                                .jsonBody,
-                                            r'''$.dados[?(@.destaque == 1)]''',
-                                          ).toList();
+                                          final carrocel =
+                                              carouselListarEventosResponse
+                                                  .jsonBody
+                                                  .toList();
                                           return Container(
                                             width: double.infinity,
                                             height: 101.0,
