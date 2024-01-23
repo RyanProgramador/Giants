@@ -199,6 +199,14 @@ class ListarEventosCall {
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
+  static dynamic? dadosJsonDestaqueUM(dynamic response) => getJsonField(
+        response,
+        r'''$.dados[?(@.destaque == 1)]''',
+      );
+  static dynamic? dadosJsonDestaqueDOIS(dynamic response) => getJsonField(
+        response,
+        r'''$.dados[?(@.destaque == 2)]''',
+      );
 }
 
 class ListPlaylistCall {
