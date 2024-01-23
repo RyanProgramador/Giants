@@ -894,11 +894,9 @@ class _InicioWidgetState extends State<InicioWidget> {
                                       ),
                                       child: Builder(
                                         builder: (context) {
-                                          final carrocel2 = ListarEventosCall
-                                              .dadosJsonDestaqueDOIS(
-                                            containerListarEventosResponse
-                                                .jsonBody,
-                                          ).toList();
+                                          final carrocel2 = FFAppState()
+                                              .eventosLitados
+                                              .toList();
                                           return Container(
                                             width: double.infinity,
                                             height: 101.0,
@@ -1141,7 +1139,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                         Text(
                                                                           getJsonField(
                                                                             carrocel2Item,
-                                                                            r'''$.descricao''',
+                                                                            r'''$.dados[?(@.destaque == 1)].descricao''',
                                                                           ).toString(),
                                                                           style:
                                                                               TextStyle(
@@ -1511,7 +1509,10 @@ class _InicioWidgetState extends State<InicioWidget> {
                                         ),
                                       ),
                                       Text(
-                                        'Hello World',
+                                        FFAppState()
+                                            .eventosLitados
+                                            .first
+                                            .toString(),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium,
                                       ),
