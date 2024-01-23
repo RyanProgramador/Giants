@@ -38,8 +38,6 @@ class _EventosMesWidgetState extends State<EventosMesWidget> {
           FFAppState().dataEventosLista = ListarEventosCall.dataListarEvento(
             (_model.resultadoListaEventos?.jsonBody ?? ''),
           )!
-              .map((e) => e.toString())
-              .toList()
               .toList()
               .cast<String>();
         });

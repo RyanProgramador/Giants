@@ -190,11 +190,15 @@ class ListarEventosCall {
         r'''$.dados''',
         true,
       ) as List?;
-  static List? dataListarEvento(dynamic response) => getJsonField(
+  static List<String>? dataListarEvento(dynamic response) => (getJsonField(
         response,
         r'''$.dados[:].data''',
         true,
-      ) as List?;
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
 }
 
 class ListPlaylistCall {

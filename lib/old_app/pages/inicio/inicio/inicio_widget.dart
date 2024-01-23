@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/old_app/pages/eventos/modal_evento/modal_evento_widget.dart';
+import '/backend/schema/structs/index.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:carousel_slider/carousel_slider.dart';
@@ -873,11 +874,15 @@ class _InicioWidgetState extends State<InicioWidget> {
                                           snapshot.data!;
                                       return Builder(
                                         builder: (context) {
-                                          final carrocel = getJsonField(
-                                            carouselListarEventosResponse
-                                                .jsonBody,
-                                            r'''$.dados[?(@.destaque == 1)]''',
-                                          ).toList();
+                                          final carrocel =
+                                              (DadosEventosStruct.maybeFromMap(
+                                                          getJsonField(
+                                                    carouselListarEventosResponse
+                                                        .jsonBody,
+                                                    r'''$.dados[?(@.destaque == 1)]''',
+                                                  ))?.toMap())
+                                                      ?.toList() ??
+                                                  [];
                                           return Container(
                                             width: double.infinity,
                                             height: 101.0,
