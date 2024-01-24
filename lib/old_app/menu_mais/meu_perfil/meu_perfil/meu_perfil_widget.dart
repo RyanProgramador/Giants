@@ -187,98 +187,97 @@ class _MeuPerfilWidgetState extends State<MeuPerfilWidget>
         ),
         body: SafeArea(
           top: true,
-          child: Container(
-            width: double.infinity,
-            height: double.infinity,
-            decoration: BoxDecoration(
-              color: Colors.black,
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: Image.asset(
-                  'assets/images/padro_giants-1-removebg_1_(Traced).png',
-                ).image,
+          child: FutureBuilder<ApiCallResponse>(
+            future: OQueFaltaCadastrarCall.call(
+              pesId: valueOrDefault<String>(
+                FFAppState().usrID,
+                '1',
               ),
             ),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    width: double.infinity,
-                    height: 100.0,
-                    decoration: BoxDecoration(
-                      color: Colors.transparent,
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              30.0, 0.0, 30.0, 0.0),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              context.safePop();
-                            },
-                            child: Icon(
-                              Icons.arrow_back_sharp,
-                              color: Colors.white,
-                              size: 24.0,
-                            ),
-                          ),
-                        ),
-                        Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
-                          child: Text(
-                            'Meu perfil',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Giantas Denton',
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.normal,
-                                  useGoogleFonts: false,
-                                ),
-                          ),
-                        ),
-                      ],
+            builder: (context, snapshot) {
+              // Customize what your widget looks like when it's loading.
+              if (!snapshot.hasData) {
+                return Center(
+                  child: SizedBox(
+                    width: 50.0,
+                    height: 50.0,
+                    child: CircularProgressIndicator(
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                        Colors.white,
+                      ),
                     ),
                   ),
+                );
+              }
+              final containerOQueFaltaCadastrarResponse = snapshot.data!;
+              return Container(
+                width: double.infinity,
+                height: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: Image.asset(
+                      'assets/images/padro_giants-1-removebg_1_(Traced).png',
+                    ).image,
+                  ),
                 ),
-                Flexible(
-                  flex: 10,
-                  child: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(22.0, 0.0, 22.0, 0.0),
-                    child: FutureBuilder<ApiCallResponse>(
-                      future: OQueFaltaCadastrarCall.call(
-                        pesId: valueOrDefault<String>(
-                          FFAppState().usrID,
-                          '1',
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        width: double.infinity,
+                        height: 100.0,
+                        decoration: BoxDecoration(
+                          color: Colors.transparent,
                         ),
-                      ),
-                      builder: (context, snapshot) {
-                        // Customize what your widget looks like when it's loading.
-                        if (!snapshot.hasData) {
-                          return Center(
-                            child: SizedBox(
-                              width: 50.0,
-                              height: 50.0,
-                              child: CircularProgressIndicator(
-                                valueColor: AlwaysStoppedAnimation<Color>(
-                                  Colors.white,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  30.0, 0.0, 30.0, 0.0),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.safePop();
+                                },
+                                child: Icon(
+                                  Icons.arrow_back_sharp,
+                                  color: Colors.white,
+                                  size: 24.0,
                                 ),
                               ),
                             ),
-                          );
-                        }
-                        final containerOQueFaltaCadastrarResponse =
-                            snapshot.data!;
-                        return Container(
+                            Align(
+                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              child: Text(
+                                'Meu perfil',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Giantas Denton',
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.normal,
+                                      useGoogleFonts: false,
+                                    ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Flexible(
+                      flex: 10,
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            22.0, 0.0, 22.0, 0.0),
+                        child: Container(
                           width: double.infinity,
                           height: double.infinity,
                           decoration: BoxDecoration(
@@ -2405,13 +2404,13 @@ class _MeuPerfilWidgetState extends State<MeuPerfilWidget>
                               ],
                             ),
                           ),
-                        );
-                      },
+                        ),
+                      ),
                     ),
-                  ),
+                  ],
                 ),
-              ],
-            ),
+              );
+            },
           ),
         ),
       ),
