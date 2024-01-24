@@ -753,7 +753,7 @@ class OQueFaltaCadastrarCall {
     final ffApiRequestBody = '''
 {
   "tipo": "apk_o_que_falta_cadastrar",
-  "pes_id": ${pesId}
+  "pes_id": "${pesId}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'oQueFaltaCadastrar',
