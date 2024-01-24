@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/old_app/menu_mais/meu_perfil/galeriaou_camera/galeriaou_camera_widget.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -262,7 +263,9 @@ class _MeuPerfilWidgetState extends State<MeuPerfilWidget>
                       ),
                       child: FutureBuilder<ApiCallResponse>(
                         future: OQueFaltaCadastrarCall.call(
-                          pesId: FFAppState().usrID,
+                          pesId: functions
+                              .stringToInt(FFAppState().usrID)
+                              ?.toString(),
                         ),
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.

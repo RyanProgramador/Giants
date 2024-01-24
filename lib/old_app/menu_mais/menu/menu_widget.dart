@@ -214,10 +214,14 @@ class _MenuWidgetState extends State<MenuWidget> {
                                                     children: [
                                                       Text(
                                                         FFAppState().UsrNome,
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium,
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Open Sans',
+                                                              fontSize: 18.0,
+                                                            ),
                                                       ),
                                                     ],
                                                   ),

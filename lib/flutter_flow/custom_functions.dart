@@ -82,3 +82,12 @@ bool? compareDuasListas(
 
   return false;
 }
+
+int? stringToInt(String? stringQueViraraInt) {
+  if (stringQueViraraInt == null) {
+    return null; // Retorna nulo se a string de entrada for nula
+  }
+
+  // Tenta converter a string para um inteiro
+  return int.tryParse(stringQueViraraInt);
+}
