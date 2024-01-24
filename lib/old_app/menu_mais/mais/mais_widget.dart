@@ -144,10 +144,6 @@ class _MaisWidgetState extends State<MaisWidget> {
                                   ),
                                 },
                               );
-
-                              setState(() {
-                                FFAppState().PorcentagemCFG = 0.0;
-                              });
                             },
                             child: ClipOval(
                               child: Container(
