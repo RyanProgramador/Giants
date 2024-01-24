@@ -263,9 +263,7 @@ class _MeuPerfilWidgetState extends State<MeuPerfilWidget>
                       ),
                       child: FutureBuilder<ApiCallResponse>(
                         future: OQueFaltaCadastrarCall.call(
-                          pesId: functions
-                              .stringToInt(FFAppState().usrID)
-                              ?.toString(),
+                          pesId: functions.stringToInt(FFAppState().usrID),
                         ),
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.
