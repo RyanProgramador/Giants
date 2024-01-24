@@ -2,12 +2,12 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/old_app/pages/eventos/maps_modal/maps_modal_widget.dart';
 import '/old_app/pages/eventos/modal_do_qr_code/modal_do_qr_code_widget.dart';
 import '/old_app/pages/eventos/modal_listagem_presenca/modal_listagem_presenca_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:map_launcher/map_launcher.dart' as $ml;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -215,31 +215,10 @@ class _ModalEventoWidgetState extends State<ModalEventoWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          await showModalBottomSheet(
-                                            isScrollControlled: true,
-                                            backgroundColor: Colors.transparent,
-                                            enableDrag: false,
-                                            context: context,
-                                            builder: (context) {
-                                              return Padding(
-                                                padding:
-                                                    MediaQuery.viewInsetsOf(
-                                                        context),
-                                                child: MapsModalWidget(
-                                                  nomeTitulo: '',
-                                                  exclusivoGiatnts: false,
-                                                  dataEvento: '',
-                                                  localEvento: '',
-                                                  sobreEvento: '',
-                                                  fotoBase64: '',
-                                                  dataEventoFim: '',
-                                                  idEvento: '',
-                                                  marker: null!,
-                                                ),
-                                              );
-                                            },
-                                          ).then(
-                                              (value) => safeSetState(() {}));
+                                          await launchMap(
+                                            address: widget.localEvento,
+                                            title: widget.nomeTitulo!,
+                                          );
                                         },
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
