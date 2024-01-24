@@ -18,8 +18,6 @@ class MaisModel extends FlutterFlowModel<MaisWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  // Stores action output result for [Backend Call - API (PorcentagemCFG)] action in Container widget.
-  ApiCallResponse? retornoPorcentagem;
   var retornoScanQrCode = '';
   // Stores action output result for [Backend Call - API (ConfirmaPresenca)] action in Container widget.
   ApiCallResponse? confirmapresenca;

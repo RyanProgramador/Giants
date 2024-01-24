@@ -112,7 +112,6 @@ class _MaisWidgetState extends State<MaisWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              var _shouldSetState = false;
                               if (FFAppState().UsrClass == '5') {
                                 await showDialog(
                                   context: context,
@@ -131,7 +130,6 @@ class _MaisWidgetState extends State<MaisWidget> {
                                     );
                                   },
                                 );
-                                if (_shouldSetState) setState(() {});
                                 return;
                               }
 
@@ -147,16 +145,9 @@ class _MaisWidgetState extends State<MaisWidget> {
                                 },
                               );
 
-                              _model.retornoPorcentagem =
-                                  await PorcentagemCFGCall.call();
-                              _shouldSetState = true;
                               setState(() {
-                                FFAppState().PorcentagemCFG =
-                                    PorcentagemCFGCall.porcentagemCFG(
-                                  (_model.retornoPorcentagem?.jsonBody ?? ''),
-                                );
+                                FFAppState().PorcentagemCFG = 0.0;
                               });
-                              if (_shouldSetState) setState(() {});
                             },
                             child: ClipOval(
                               child: Container(
