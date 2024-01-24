@@ -748,7 +748,7 @@ class PesquisaEventoCall {
 
 class OQueFaltaCadastrarCall {
   static Future<ApiCallResponse> call({
-    int? pesId,
+    String? pesId = '',
   }) async {
     final ffApiRequestBody = '''
 {

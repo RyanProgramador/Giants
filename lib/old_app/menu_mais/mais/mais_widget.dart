@@ -93,7 +93,7 @@ class _MaisWidgetState extends State<MaisWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               30.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            'Menu mais',
+                            FFAppState().usrID,
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
