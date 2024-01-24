@@ -93,7 +93,7 @@ class _MaisWidgetState extends State<MaisWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               30.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            FFAppState().usrID,
+                            'Menu mais',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -900,50 +900,53 @@ class _MaisWidgetState extends State<MaisWidget> {
                                   ),
                                 ),
                               ),
-                              Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.pushNamed('Desenvolvimento');
-                                  },
-                                  child: Container(
-                                    width: double.infinity,
-                                    height: 50.0,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFF2B2B2B),
-                                      borderRadius: BorderRadius.circular(0.0),
-                                    ),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 0.0, 0.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 16.0, 0.0),
-                                            child: Icon(
-                                              Icons.logo_dev,
-                                              color: Colors.white,
-                                              size: 24.0,
+                              if (true == false)
+                                Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed('Desenvolvimento');
+                                    },
+                                    child: Container(
+                                      width: double.infinity,
+                                      height: 50.0,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFF2B2B2B),
+                                        borderRadius:
+                                            BorderRadius.circular(0.0),
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            16.0, 0.0, 0.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 16.0, 0.0),
+                                              child: Icon(
+                                                Icons.logo_dev,
+                                                color: Colors.white,
+                                                size: 24.0,
+                                              ),
                                             ),
-                                          ),
-                                          Text(
-                                            'DEV',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium,
-                                          ),
-                                        ],
+                                            Text(
+                                              'DEV',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium,
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ),
                             ],
                           ),
                         ),
