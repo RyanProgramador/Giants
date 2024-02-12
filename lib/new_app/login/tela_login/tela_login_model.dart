@@ -20,6 +20,8 @@ class TelaLoginModel extends FlutterFlowModel<TelaLoginWidget> {
   bool? lembrarSenha;
   // Stores action output result for [Backend Call - API (Login)] action in TelaLogin widget.
   ApiCallResponse? loginLembrarSenha;
+  // Stores action output result for [Backend Call - API (ListarEventos)] action in TelaLogin widget.
+  ApiCallResponse? apicallListarEventos;
   // State field(s) for email widget.
   FocusNode? emailFocusNode;
   TextEditingController? emailController;

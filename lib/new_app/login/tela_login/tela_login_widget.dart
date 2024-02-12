@@ -110,6 +110,20 @@ class _TelaLoginWidgetState extends State<TelaLoginWidget>
             )!
                 .toString();
           });
+          _model.apicallListarEventos = await ListarEventosCall.call(
+            pesId: FFAppState().usrID,
+          );
+          if ((_model.apicallListarEventos?.succeeded ?? true)) {
+            setState(() {
+              FFAppState().eventosListadosDestaqueDois = getJsonField(
+                (_model.apicallListarEventos?.jsonBody ?? ''),
+                r'''$.dados[?(@.destaque == 2)]''',
+                true,
+              )!
+                  .toList()
+                  .cast<dynamic>();
+            });
+          }
 
           context.goNamed(
             'Inicio',

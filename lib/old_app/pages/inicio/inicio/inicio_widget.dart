@@ -1439,7 +1439,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                                             child: Text(
                                                                                               getJsonField(
                                                                                                 gridListarDoisItem,
-                                                                                                r'''$..descricao''',
+                                                                                                r'''$.descricao''',
                                                                                               ).toString(),
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                     fontFamily: 'Giantas Denton',
