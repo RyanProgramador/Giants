@@ -10,12 +10,12 @@ export 'modal_do_qr_code_model.dart';
 
 class ModalDoQrCodeWidget extends StatefulWidget {
   const ModalDoQrCodeWidget({
-    Key? key,
+    super.key,
     required this.pesID,
     required this.cargoID,
     required this.eventoID,
     required this.evenOuimer,
-  }) : super(key: key);
+  });
 
   final String? pesID;
   final String? cargoID;
@@ -23,7 +23,7 @@ class ModalDoQrCodeWidget extends StatefulWidget {
   final String? evenOuimer;
 
   @override
-  _ModalDoQrCodeWidgetState createState() => _ModalDoQrCodeWidgetState();
+  State<ModalDoQrCodeWidget> createState() => _ModalDoQrCodeWidgetState();
 }
 
 class _ModalDoQrCodeWidgetState extends State<ModalDoQrCodeWidget> {

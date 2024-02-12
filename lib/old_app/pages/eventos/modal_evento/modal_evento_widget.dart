@@ -16,7 +16,7 @@ export 'modal_evento_model.dart';
 
 class ModalEventoWidget extends StatefulWidget {
   const ModalEventoWidget({
-    Key? key,
+    super.key,
     required this.nomeTitulo,
     required this.exclusivoGiatnts,
     required this.dataEvento,
@@ -27,7 +27,7 @@ class ModalEventoWidget extends StatefulWidget {
     required this.idEvento,
     required this.jaIngressou,
     this.evenOuImer,
-  }) : super(key: key);
+  });
 
   final String? nomeTitulo;
   final bool? exclusivoGiatnts;
@@ -41,7 +41,7 @@ class ModalEventoWidget extends StatefulWidget {
   final String? evenOuImer;
 
   @override
-  _ModalEventoWidgetState createState() => _ModalEventoWidgetState();
+  State<ModalEventoWidget> createState() => _ModalEventoWidgetState();
 }
 
 class _ModalEventoWidgetState extends State<ModalEventoWidget> {

@@ -14,10 +14,10 @@ import 'tela_login_model.dart';
 export 'tela_login_model.dart';
 
 class TelaLoginWidget extends StatefulWidget {
-  const TelaLoginWidget({Key? key}) : super(key: key);
+  const TelaLoginWidget({super.key});
 
   @override
-  _TelaLoginWidgetState createState() => _TelaLoginWidgetState();
+  State<TelaLoginWidget> createState() => _TelaLoginWidgetState();
 }
 
 class _TelaLoginWidgetState extends State<TelaLoginWidget>

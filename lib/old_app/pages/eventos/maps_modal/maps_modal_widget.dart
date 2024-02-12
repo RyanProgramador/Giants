@@ -10,7 +10,7 @@ export 'maps_modal_model.dart';
 
 class MapsModalWidget extends StatefulWidget {
   const MapsModalWidget({
-    Key? key,
+    super.key,
     required this.nomeTitulo,
     required this.exclusivoGiatnts,
     required this.dataEvento,
@@ -20,7 +20,7 @@ class MapsModalWidget extends StatefulWidget {
     required this.dataEventoFim,
     required this.idEvento,
     required this.marker,
-  }) : super(key: key);
+  });
 
   final String? nomeTitulo;
   final bool? exclusivoGiatnts;
@@ -33,7 +33,7 @@ class MapsModalWidget extends StatefulWidget {
   final FFPlace? marker;
 
   @override
-  _MapsModalWidgetState createState() => _MapsModalWidgetState();
+  State<MapsModalWidget> createState() => _MapsModalWidgetState();
 }
 
 class _MapsModalWidgetState extends State<MapsModalWidget> {

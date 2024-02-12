@@ -10,10 +10,10 @@ import 'desenvolvimento_model.dart';
 export 'desenvolvimento_model.dart';
 
 class DesenvolvimentoWidget extends StatefulWidget {
-  const DesenvolvimentoWidget({Key? key}) : super(key: key);
+  const DesenvolvimentoWidget({super.key});
 
   @override
-  _DesenvolvimentoWidgetState createState() => _DesenvolvimentoWidgetState();
+  State<DesenvolvimentoWidget> createState() => _DesenvolvimentoWidgetState();
 }
 
 class _DesenvolvimentoWidgetState extends State<DesenvolvimentoWidget> {

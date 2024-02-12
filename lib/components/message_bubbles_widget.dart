@@ -9,12 +9,12 @@ export 'message_bubbles_model.dart';
 
 class MessageBubblesWidget extends StatefulWidget {
   const MessageBubblesWidget({
-    Key? key,
+    super.key,
     this.mesageText,
     this.blueBubble,
     this.showDelivered,
     this.showTail,
-  }) : super(key: key);
+  });
 
   final String? mesageText;
   final bool? blueBubble;
@@ -22,7 +22,7 @@ class MessageBubblesWidget extends StatefulWidget {
   final bool? showTail;
 
   @override
-  _MessageBubblesWidgetState createState() => _MessageBubblesWidgetState();
+  State<MessageBubblesWidget> createState() => _MessageBubblesWidgetState();
 }
 
 class _MessageBubblesWidgetState extends State<MessageBubblesWidget> {

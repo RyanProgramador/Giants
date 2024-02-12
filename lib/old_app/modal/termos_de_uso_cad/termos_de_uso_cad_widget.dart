@@ -8,10 +8,10 @@ import 'termos_de_uso_cad_model.dart';
 export 'termos_de_uso_cad_model.dart';
 
 class TermosDeUsoCadWidget extends StatefulWidget {
-  const TermosDeUsoCadWidget({Key? key}) : super(key: key);
+  const TermosDeUsoCadWidget({super.key});
 
   @override
-  _TermosDeUsoCadWidgetState createState() => _TermosDeUsoCadWidgetState();
+  State<TermosDeUsoCadWidget> createState() => _TermosDeUsoCadWidgetState();
 }
 
 class _TermosDeUsoCadWidgetState extends State<TermosDeUsoCadWidget> {

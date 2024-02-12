@@ -14,10 +14,10 @@ import 'eventos_inscrito_model.dart';
 export 'eventos_inscrito_model.dart';
 
 class EventosInscritoWidget extends StatefulWidget {
-  const EventosInscritoWidget({Key? key}) : super(key: key);
+  const EventosInscritoWidget({super.key});
 
   @override
-  _EventosInscritoWidgetState createState() => _EventosInscritoWidgetState();
+  State<EventosInscritoWidget> createState() => _EventosInscritoWidgetState();
 }
 
 class _EventosInscritoWidgetState extends State<EventosInscritoWidget> {
@@ -274,6 +274,7 @@ class _EventosInscritoWidgetState extends State<EventosInscritoWidget> {
                                               context: context,
                                               builder: (dialogContext) {
                                                 return Dialog(
+                                                  elevation: 0,
                                                   insetPadding: EdgeInsets.zero,
                                                   backgroundColor:
                                                       Colors.transparent,

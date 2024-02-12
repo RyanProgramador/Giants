@@ -14,10 +14,10 @@ import 'area_giants_model.dart';
 export 'area_giants_model.dart';
 
 class AreaGiantsWidget extends StatefulWidget {
-  const AreaGiantsWidget({Key? key}) : super(key: key);
+  const AreaGiantsWidget({super.key});
 
   @override
-  _AreaGiantsWidgetState createState() => _AreaGiantsWidgetState();
+  State<AreaGiantsWidget> createState() => _AreaGiantsWidgetState();
 }
 
 class _AreaGiantsWidgetState extends State<AreaGiantsWidget> {

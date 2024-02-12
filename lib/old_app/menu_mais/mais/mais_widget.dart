@@ -16,10 +16,10 @@ import 'mais_model.dart';
 export 'mais_model.dart';
 
 class MaisWidget extends StatefulWidget {
-  const MaisWidget({Key? key}) : super(key: key);
+  const MaisWidget({super.key});
 
   @override
-  _MaisWidgetState createState() => _MaisWidgetState();
+  State<MaisWidget> createState() => _MaisWidgetState();
 }
 
 class _MaisWidgetState extends State<MaisWidget> {

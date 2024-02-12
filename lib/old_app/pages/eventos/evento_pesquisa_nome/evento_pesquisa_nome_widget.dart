@@ -19,10 +19,10 @@ import 'evento_pesquisa_nome_model.dart';
 export 'evento_pesquisa_nome_model.dart';
 
 class EventoPesquisaNomeWidget extends StatefulWidget {
-  const EventoPesquisaNomeWidget({Key? key}) : super(key: key);
+  const EventoPesquisaNomeWidget({super.key});
 
   @override
-  _EventoPesquisaNomeWidgetState createState() =>
+  State<EventoPesquisaNomeWidget> createState() =>
       _EventoPesquisaNomeWidgetState();
 }
 
@@ -353,6 +353,7 @@ class _EventoPesquisaNomeWidgetState extends State<EventoPesquisaNomeWidget>
                                                         builder:
                                                             (dialogContext) {
                                                           return Dialog(
+                                                            elevation: 0,
                                                             insetPadding:
                                                                 EdgeInsets.zero,
                                                             backgroundColor:

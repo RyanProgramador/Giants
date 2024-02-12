@@ -11,10 +11,10 @@ import 'privacidade_dados_model.dart';
 export 'privacidade_dados_model.dart';
 
 class PrivacidadeDadosWidget extends StatefulWidget {
-  const PrivacidadeDadosWidget({Key? key}) : super(key: key);
+  const PrivacidadeDadosWidget({super.key});
 
   @override
-  _PrivacidadeDadosWidgetState createState() => _PrivacidadeDadosWidgetState();
+  State<PrivacidadeDadosWidget> createState() => _PrivacidadeDadosWidgetState();
 }
 
 class _PrivacidadeDadosWidgetState extends State<PrivacidadeDadosWidget> {

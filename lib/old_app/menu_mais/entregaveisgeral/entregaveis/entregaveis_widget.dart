@@ -14,10 +14,10 @@ import 'entregaveis_model.dart';
 export 'entregaveis_model.dart';
 
 class EntregaveisWidget extends StatefulWidget {
-  const EntregaveisWidget({Key? key}) : super(key: key);
+  const EntregaveisWidget({super.key});
 
   @override
-  _EntregaveisWidgetState createState() => _EntregaveisWidgetState();
+  State<EntregaveisWidget> createState() => _EntregaveisWidgetState();
 }
 
 class _EntregaveisWidgetState extends State<EntregaveisWidget> {

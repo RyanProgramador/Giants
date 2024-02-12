@@ -10,10 +10,10 @@ import 'alterar_senha_model.dart';
 export 'alterar_senha_model.dart';
 
 class AlterarSenhaWidget extends StatefulWidget {
-  const AlterarSenhaWidget({Key? key}) : super(key: key);
+  const AlterarSenhaWidget({super.key});
 
   @override
-  _AlterarSenhaWidgetState createState() => _AlterarSenhaWidgetState();
+  State<AlterarSenhaWidget> createState() => _AlterarSenhaWidgetState();
 }
 
 class _AlterarSenhaWidgetState extends State<AlterarSenhaWidget> {

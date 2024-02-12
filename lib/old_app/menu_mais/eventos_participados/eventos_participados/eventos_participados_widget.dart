@@ -15,10 +15,10 @@ import 'eventos_participados_model.dart';
 export 'eventos_participados_model.dart';
 
 class EventosParticipadosWidget extends StatefulWidget {
-  const EventosParticipadosWidget({Key? key}) : super(key: key);
+  const EventosParticipadosWidget({super.key});
 
   @override
-  _EventosParticipadosWidgetState createState() =>
+  State<EventosParticipadosWidget> createState() =>
       _EventosParticipadosWidgetState();
 }
 

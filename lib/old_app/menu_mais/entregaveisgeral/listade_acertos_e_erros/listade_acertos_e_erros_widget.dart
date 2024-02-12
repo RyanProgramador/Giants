@@ -9,16 +9,16 @@ export 'listade_acertos_e_erros_model.dart';
 
 class ListadeAcertosEErrosWidget extends StatefulWidget {
   const ListadeAcertosEErrosWidget({
-    Key? key,
+    super.key,
     required this.acertos,
     required this.erros,
-  }) : super(key: key);
+  });
 
   final List<String>? acertos;
   final List<String>? erros;
 
   @override
-  _ListadeAcertosEErrosWidgetState createState() =>
+  State<ListadeAcertosEErrosWidget> createState() =>
       _ListadeAcertosEErrosWidgetState();
 }
 

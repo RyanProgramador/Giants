@@ -10,14 +10,14 @@ export 'foto_grande_model.dart';
 
 class FotoGrandeWidget extends StatefulWidget {
   const FotoGrandeWidget({
-    Key? key,
+    super.key,
     required this.img,
-  }) : super(key: key);
+  });
 
   final String? img;
 
   @override
-  _FotoGrandeWidgetState createState() => _FotoGrandeWidgetState();
+  State<FotoGrandeWidget> createState() => _FotoGrandeWidgetState();
 }
 
 class _FotoGrandeWidgetState extends State<FotoGrandeWidget> {

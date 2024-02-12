@@ -12,10 +12,10 @@ import 'eventos_mes_model.dart';
 export 'eventos_mes_model.dart';
 
 class EventosMesWidget extends StatefulWidget {
-  const EventosMesWidget({Key? key}) : super(key: key);
+  const EventosMesWidget({super.key});
 
   @override
-  _EventosMesWidgetState createState() => _EventosMesWidgetState();
+  State<EventosMesWidget> createState() => _EventosMesWidgetState();
 }
 
 class _EventosMesWidgetState extends State<EventosMesWidget> {
@@ -199,6 +199,7 @@ class _EventosMesWidgetState extends State<EventosMesWidget> {
                                             context: context,
                                             builder: (dialogContext) {
                                               return Dialog(
+                                                elevation: 0,
                                                 insetPadding: EdgeInsets.zero,
                                                 backgroundColor:
                                                     Colors.transparent,

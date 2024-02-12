@@ -9,10 +9,10 @@ import 'defoult_model.dart';
 export 'defoult_model.dart';
 
 class DefoultWidget extends StatefulWidget {
-  const DefoultWidget({Key? key}) : super(key: key);
+  const DefoultWidget({super.key});
 
   @override
-  _DefoultWidgetState createState() => _DefoultWidgetState();
+  State<DefoultWidget> createState() => _DefoultWidgetState();
 }
 
 class _DefoultWidgetState extends State<DefoultWidget> {

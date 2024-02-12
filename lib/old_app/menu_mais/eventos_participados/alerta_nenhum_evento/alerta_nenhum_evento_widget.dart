@@ -8,10 +8,10 @@ import 'alerta_nenhum_evento_model.dart';
 export 'alerta_nenhum_evento_model.dart';
 
 class AlertaNenhumEventoWidget extends StatefulWidget {
-  const AlertaNenhumEventoWidget({Key? key}) : super(key: key);
+  const AlertaNenhumEventoWidget({super.key});
 
   @override
-  _AlertaNenhumEventoWidgetState createState() =>
+  State<AlertaNenhumEventoWidget> createState() =>
       _AlertaNenhumEventoWidgetState();
 }
 

@@ -23,7 +23,7 @@ class LoginCall {
     return ApiManager.instance.makeApiCall(
       callName: 'Login',
       apiUrl:
-          'https://rbi.aceleradorempresarial.com.br/dev_conceitto/ws_flutterflow/index.php',
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -82,7 +82,7 @@ class EsqueciSenhaCall {
     return ApiManager.instance.makeApiCall(
       callName: 'EsqueciSenha',
       apiUrl:
-          'https://rbi.aceleradorempresarial.com.br/dev_conceitto/ws_flutterflow/index.php',
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -128,7 +128,7 @@ class CadastroUsuariosCall {
     return ApiManager.instance.makeApiCall(
       callName: 'CadastroUsuarios',
       apiUrl:
-          'https://rbi.aceleradorempresarial.com.br/dev_conceitto/ws_flutterflow/index.php',
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -166,7 +166,7 @@ class ListarEventosCall {
     return ApiManager.instance.makeApiCall(
       callName: 'ListarEventos',
       apiUrl:
-          'https://rbi.aceleradorempresarial.com.br/dev_conceitto/ws_flutterflow/index.php',
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -281,7 +281,7 @@ class PorcentagemCFGCall {
     return ApiManager.instance.makeApiCall(
       callName: 'PorcentagemCFG',
       apiUrl:
-          'https://rbi.aceleradorempresarial.com.br/dev_conceitto/ws_flutterflow/index.php',
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -314,7 +314,7 @@ class ListaEventosMesCall {
     return ApiManager.instance.makeApiCall(
       callName: 'ListaEventosMes',
       apiUrl:
-          'https://rbi.aceleradorempresarial.com.br/dev_conceitto/ws_flutterflow/index.php',
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -427,7 +427,7 @@ class CadastraEventoPessoaCall {
     return ApiManager.instance.makeApiCall(
       callName: 'CadastraEventoPessoa',
       apiUrl:
-          'https://rbi.aceleradorempresarial.com.br/dev_conceitto/ws_flutterflow/index.php',
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -459,7 +459,7 @@ class ListaEventosInscritosCall {
     return ApiManager.instance.makeApiCall(
       callName: 'ListaEventosInscritos',
       apiUrl:
-          'https://rbi.aceleradorempresarial.com.br/dev_conceitto/ws_flutterflow/index.php',
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -538,7 +538,7 @@ class RedefinirSenhaCall {
     return ApiManager.instance.makeApiCall(
       callName: 'RedefinirSenha',
       apiUrl:
-          'https://rbi.aceleradorempresarial.com.br/dev_conceitto/ws_flutterflow/index.php',
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -575,7 +575,7 @@ class PesquisaPalestrasCall {
     return ApiManager.instance.makeApiCall(
       callName: 'PesquisaPalestras',
       apiUrl:
-          'https://rbi.aceleradorempresarial.com.br/dev_conceitto/ws_flutterflow/index.php',
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -630,7 +630,7 @@ class ListaPalestrasBancoDeDadosCall {
     return ApiManager.instance.makeApiCall(
       callName: 'ListaPalestrasBancoDeDados',
       apiUrl:
-          'https://rbi.aceleradorempresarial.com.br/dev_conceitto/ws_flutterflow/index.php',
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -721,7 +721,7 @@ class PesquisaEventoCall {
     return ApiManager.instance.makeApiCall(
       callName: 'PesquisaEvento',
       apiUrl:
-          'https://rbi.aceleradorempresarial.com.br/dev_conceitto/ws_flutterflow/index.php',
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -758,7 +758,7 @@ class OQueFaltaCadastrarCall {
     return ApiManager.instance.makeApiCall(
       callName: 'oQueFaltaCadastrar',
       apiUrl:
-          'https://rbi.aceleradorempresarial.com.br/dev_conceitto/ws_flutterflow/index.php',
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -933,7 +933,7 @@ class InserirOQueFaltaNoCadastroCall {
     return ApiManager.instance.makeApiCall(
       callName: 'Inserir o que falta no cadastro',
       apiUrl:
-          'https://rbi.aceleradorempresarial.com.br/dev_conceitto/ws_flutterflow/index.php',
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -964,7 +964,7 @@ class AlterarSenhaCall {
     return ApiManager.instance.makeApiCall(
       callName: 'AlterarSenha',
       apiUrl:
-          'https://rbi.aceleradorempresarial.com.br/dev_conceitto/ws_flutterflow/index.php',
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1002,7 +1002,7 @@ class TrocarFotoPerfilCall {
     return ApiManager.instance.makeApiCall(
       callName: 'Trocar foto perfil',
       apiUrl:
-          'https://rbi.aceleradorempresarial.com.br/dev_conceitto/ws_flutterflow/index.php',
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1029,7 +1029,7 @@ class ListarEventosParticipadosCall {
     return ApiManager.instance.makeApiCall(
       callName: 'Listar eventos participados',
       apiUrl:
-          'https://rbi.aceleradorempresarial.com.br/dev_conceitto/ws_flutterflow/index.php',
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1070,7 +1070,7 @@ class ConfirmaPresencaCall {
     return ApiManager.instance.makeApiCall(
       callName: 'ConfirmaPresenca',
       apiUrl:
-          'https://rbi.aceleradorempresarial.com.br/dev_conceitto/ws_flutterflow/index.php',
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1101,7 +1101,7 @@ class EntregaveisPorPessoaListaCall {
     return ApiManager.instance.makeApiCall(
       callName: 'Entregaveis Por pessoa Lista',
       apiUrl:
-          'https://rbi.aceleradorempresarial.com.br/dev_conceitto/ws_flutterflow/index.php',
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1172,7 +1172,7 @@ class ConfiurmaEntregaveisPorPessoasCall {
     return ApiManager.instance.makeApiCall(
       callName: 'Confiurma Entregaveis por pessoas',
       apiUrl:
-          'https://rbi.aceleradorempresarial.com.br/dev_conceitto/ws_flutterflow/index.php',
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1218,7 +1218,7 @@ class ListarGIANTSCall {
     return ApiManager.instance.makeApiCall(
       callName: 'Listar GIANTS',
       apiUrl:
-          'https://rbi.aceleradorempresarial.com.br/dev_conceitto/ws_flutterflow/index.php',
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1307,7 +1307,7 @@ class ListarFotosGIANTSCall {
     return ApiManager.instance.makeApiCall(
       callName: 'listarFotosGIANTS',
       apiUrl:
-          'https://rbi.aceleradorempresarial.com.br/dev_conceitto/ws_flutterflow/index.php',
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1351,7 +1351,7 @@ class ListarMembrosPresentesEmEventosOuImersoesCall {
     return ApiManager.instance.makeApiCall(
       callName: 'ListarMembrosPresentesEmEventosOuImersoes',
       apiUrl:
-          'https://rbi.aceleradorempresarial.com.br/dev_conceitto/ws_flutterflow/index.php',
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1406,7 +1406,7 @@ class AtualizaPrivacidadeDeDadosCall {
     return ApiManager.instance.makeApiCall(
       callName: 'AtualizaPrivacidadeDeDados',
       apiUrl:
-          'https://rbi.aceleradorempresarial.com.br/dev_conceitto/ws_flutterflow/index.php',
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
       callType: ApiCallType.POST,
       headers: {},
       params: {},

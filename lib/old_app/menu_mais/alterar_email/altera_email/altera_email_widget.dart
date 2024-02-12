@@ -10,10 +10,10 @@ import 'altera_email_model.dart';
 export 'altera_email_model.dart';
 
 class AlteraEmailWidget extends StatefulWidget {
-  const AlteraEmailWidget({Key? key}) : super(key: key);
+  const AlteraEmailWidget({super.key});
 
   @override
-  _AlteraEmailWidgetState createState() => _AlteraEmailWidgetState();
+  State<AlteraEmailWidget> createState() => _AlteraEmailWidgetState();
 }
 
 class _AlteraEmailWidgetState extends State<AlteraEmailWidget> {

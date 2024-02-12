@@ -8,10 +8,10 @@ import 'alerta_nenhuma_foto_model.dart';
 export 'alerta_nenhuma_foto_model.dart';
 
 class AlertaNenhumaFotoWidget extends StatefulWidget {
-  const AlertaNenhumaFotoWidget({Key? key}) : super(key: key);
+  const AlertaNenhumaFotoWidget({super.key});
 
   @override
-  _AlertaNenhumaFotoWidgetState createState() =>
+  State<AlertaNenhumaFotoWidget> createState() =>
       _AlertaNenhumaFotoWidgetState();
 }
 

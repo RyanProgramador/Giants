@@ -20,10 +20,10 @@ import 'palestras_model.dart';
 export 'palestras_model.dart';
 
 class PalestrasWidget extends StatefulWidget {
-  const PalestrasWidget({Key? key}) : super(key: key);
+  const PalestrasWidget({super.key});
 
   @override
-  _PalestrasWidgetState createState() => _PalestrasWidgetState();
+  State<PalestrasWidget> createState() => _PalestrasWidgetState();
 }
 
 class _PalestrasWidgetState extends State<PalestrasWidget>

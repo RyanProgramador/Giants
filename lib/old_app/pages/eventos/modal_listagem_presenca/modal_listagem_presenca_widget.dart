@@ -10,16 +10,16 @@ export 'modal_listagem_presenca_model.dart';
 
 class ModalListagemPresencaWidget extends StatefulWidget {
   const ModalListagemPresencaWidget({
-    Key? key,
+    super.key,
     required this.eventoID,
     required this.evenOuimer,
-  }) : super(key: key);
+  });
 
   final String? eventoID;
   final String? evenOuimer;
 
   @override
-  _ModalListagemPresencaWidgetState createState() =>
+  State<ModalListagemPresencaWidget> createState() =>
       _ModalListagemPresencaWidgetState();
 }
 

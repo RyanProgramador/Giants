@@ -16,10 +16,10 @@ import 'meu_perfil_model.dart';
 export 'meu_perfil_model.dart';
 
 class MeuPerfilWidget extends StatefulWidget {
-  const MeuPerfilWidget({Key? key}) : super(key: key);
+  const MeuPerfilWidget({super.key});
 
   @override
-  _MeuPerfilWidgetState createState() => _MeuPerfilWidgetState();
+  State<MeuPerfilWidget> createState() => _MeuPerfilWidgetState();
 }
 
 class _MeuPerfilWidgetState extends State<MeuPerfilWidget>

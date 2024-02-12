@@ -12,10 +12,10 @@ import 'menu_model.dart';
 export 'menu_model.dart';
 
 class MenuWidget extends StatefulWidget {
-  const MenuWidget({Key? key}) : super(key: key);
+  const MenuWidget({super.key});
 
   @override
-  _MenuWidgetState createState() => _MenuWidgetState();
+  State<MenuWidget> createState() => _MenuWidgetState();
 }
 
 class _MenuWidgetState extends State<MenuWidget> {

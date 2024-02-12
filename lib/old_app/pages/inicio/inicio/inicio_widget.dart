@@ -16,10 +16,10 @@ import 'inicio_model.dart';
 export 'inicio_model.dart';
 
 class InicioWidget extends StatefulWidget {
-  const InicioWidget({Key? key}) : super(key: key);
+  const InicioWidget({super.key});
 
   @override
-  _InicioWidgetState createState() => _InicioWidgetState();
+  State<InicioWidget> createState() => _InicioWidgetState();
 }
 
 class _InicioWidgetState extends State<InicioWidget> {
@@ -221,6 +221,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                     context: context,
                                                     builder: (dialogContext) {
                                                       return Dialog(
+                                                        elevation: 0,
                                                         insetPadding:
                                                             EdgeInsets.zero,
                                                         backgroundColor:
@@ -621,6 +622,8 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                       builder:
                                                                           (dialogContext) {
                                                                         return Dialog(
+                                                                          elevation:
+                                                                              0,
                                                                           insetPadding:
                                                                               EdgeInsets.zero,
                                                                           backgroundColor:
@@ -896,6 +899,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                         builder:
                                                             (dialogContext) {
                                                           return Dialog(
+                                                            elevation: 0,
                                                             insetPadding:
                                                                 EdgeInsets.zero,
                                                             backgroundColor:
@@ -1269,6 +1273,8 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                   builder:
                                                                       (dialogContext) {
                                                                     return Dialog(
+                                                                      elevation:
+                                                                          0,
                                                                       insetPadding:
                                                                           EdgeInsets
                                                                               .zero,

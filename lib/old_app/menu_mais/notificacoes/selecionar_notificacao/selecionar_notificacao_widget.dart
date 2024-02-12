@@ -10,10 +10,10 @@ import 'selecionar_notificacao_model.dart';
 export 'selecionar_notificacao_model.dart';
 
 class SelecionarNotificacaoWidget extends StatefulWidget {
-  const SelecionarNotificacaoWidget({Key? key}) : super(key: key);
+  const SelecionarNotificacaoWidget({super.key});
 
   @override
-  _SelecionarNotificacaoWidgetState createState() =>
+  State<SelecionarNotificacaoWidget> createState() =>
       _SelecionarNotificacaoWidgetState();
 }
 

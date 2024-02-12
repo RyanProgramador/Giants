@@ -9,18 +9,18 @@ export 'modal_palestra_model.dart';
 
 class ModalPalestraWidget extends StatefulWidget {
   const ModalPalestraWidget({
-    Key? key,
+    super.key,
     required this.urlVideo,
     required this.tituloVideo,
     required this.descricaoVideo,
-  }) : super(key: key);
+  });
 
   final String? urlVideo;
   final String? tituloVideo;
   final String? descricaoVideo;
 
   @override
-  _ModalPalestraWidgetState createState() => _ModalPalestraWidgetState();
+  State<ModalPalestraWidget> createState() => _ModalPalestraWidgetState();
 }
 
 class _ModalPalestraWidgetState extends State<ModalPalestraWidget> {

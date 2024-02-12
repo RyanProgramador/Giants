@@ -16,16 +16,16 @@ export 'giants_fotos_model.dart';
 
 class GiantsFotosWidget extends StatefulWidget {
   const GiantsFotosWidget({
-    Key? key,
+    super.key,
     required this.pesId,
     required this.pesNome,
-  }) : super(key: key);
+  });
 
   final String? pesId;
   final String? pesNome;
 
   @override
-  _GiantsFotosWidgetState createState() => _GiantsFotosWidgetState();
+  State<GiantsFotosWidget> createState() => _GiantsFotosWidgetState();
 }
 
 class _GiantsFotosWidgetState extends State<GiantsFotosWidget> {

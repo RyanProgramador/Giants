@@ -34,7 +34,8 @@ class AppStateNotifier extends ChangeNotifier {
   }
 }
 
-GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
+GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
+    GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
@@ -51,7 +52,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ),
               ),
             )
-          : TelaLoginWidget(),
+          : entryPage ?? TelaLoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
@@ -69,7 +70,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     ),
                   ),
                 )
-              : TelaLoginWidget(),
+              : entryPage ?? TelaLoginWidget(),
         ),
         FFRoute(
           name: 'TelaLogin',

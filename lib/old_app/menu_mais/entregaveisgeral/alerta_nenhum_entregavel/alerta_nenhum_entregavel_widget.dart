@@ -8,10 +8,10 @@ import 'alerta_nenhum_entregavel_model.dart';
 export 'alerta_nenhum_entregavel_model.dart';
 
 class AlertaNenhumEntregavelWidget extends StatefulWidget {
-  const AlertaNenhumEntregavelWidget({Key? key}) : super(key: key);
+  const AlertaNenhumEntregavelWidget({super.key});
 
   @override
-  _AlertaNenhumEntregavelWidgetState createState() =>
+  State<AlertaNenhumEntregavelWidget> createState() =>
       _AlertaNenhumEntregavelWidgetState();
 }
 

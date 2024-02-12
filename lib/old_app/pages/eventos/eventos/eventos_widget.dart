@@ -18,10 +18,10 @@ import 'eventos_model.dart';
 export 'eventos_model.dart';
 
 class EventosWidget extends StatefulWidget {
-  const EventosWidget({Key? key}) : super(key: key);
+  const EventosWidget({super.key});
 
   @override
-  _EventosWidgetState createState() => _EventosWidgetState();
+  State<EventosWidget> createState() => _EventosWidgetState();
 }
 
 class _EventosWidgetState extends State<EventosWidget> {
@@ -357,6 +357,7 @@ class _EventosWidgetState extends State<EventosWidget> {
                                                             builder:
                                                                 (dialogContext) {
                                                               return Dialog(
+                                                                elevation: 0,
                                                                 insetPadding:
                                                                     EdgeInsets
                                                                         .zero,
@@ -849,6 +850,7 @@ class _EventosWidgetState extends State<EventosWidget> {
                                                         builder:
                                                             (dialogContext) {
                                                           return Dialog(
+                                                            elevation: 0,
                                                             insetPadding:
                                                                 EdgeInsets.zero,
                                                             backgroundColor:
@@ -1360,6 +1362,7 @@ class _EventosWidgetState extends State<EventosWidget> {
                                                         builder:
                                                             (dialogContext) {
                                                           return Dialog(
+                                                            elevation: 0,
                                                             insetPadding:
                                                                 EdgeInsets.zero,
                                                             backgroundColor:
@@ -1735,6 +1738,7 @@ class _EventosWidgetState extends State<EventosWidget> {
                                                       context: context,
                                                       builder: (dialogContext) {
                                                         return Dialog(
+                                                          elevation: 0,
                                                           insetPadding:
                                                               EdgeInsets.zero,
                                                           backgroundColor:
@@ -2104,6 +2108,7 @@ class _EventosWidgetState extends State<EventosWidget> {
                                                               builder:
                                                                   (dialogContext) {
                                                                 return Dialog(
+                                                                  elevation: 0,
                                                                   insetPadding:
                                                                       EdgeInsets
                                                                           .zero,
@@ -2594,6 +2599,7 @@ class _EventosWidgetState extends State<EventosWidget> {
                                                           builder:
                                                               (dialogContext) {
                                                             return Dialog(
+                                                              elevation: 0,
                                                               insetPadding:
                                                                   EdgeInsets
                                                                       .zero,

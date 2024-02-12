@@ -19,10 +19,10 @@ import 'imersoes_pesquisa_nome_model.dart';
 export 'imersoes_pesquisa_nome_model.dart';
 
 class ImersoesPesquisaNomeWidget extends StatefulWidget {
-  const ImersoesPesquisaNomeWidget({Key? key}) : super(key: key);
+  const ImersoesPesquisaNomeWidget({super.key});
 
   @override
-  _ImersoesPesquisaNomeWidgetState createState() =>
+  State<ImersoesPesquisaNomeWidget> createState() =>
       _ImersoesPesquisaNomeWidgetState();
 }
 
@@ -328,6 +328,7 @@ class _ImersoesPesquisaNomeWidgetState extends State<ImersoesPesquisaNomeWidget>
                                                       context: context,
                                                       builder: (dialogContext) {
                                                         return Dialog(
+                                                          elevation: 0,
                                                           insetPadding:
                                                               EdgeInsets.zero,
                                                           backgroundColor:

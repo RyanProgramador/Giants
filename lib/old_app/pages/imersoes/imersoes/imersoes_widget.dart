@@ -15,10 +15,10 @@ import 'imersoes_model.dart';
 export 'imersoes_model.dart';
 
 class ImersoesWidget extends StatefulWidget {
-  const ImersoesWidget({Key? key}) : super(key: key);
+  const ImersoesWidget({super.key});
 
   @override
-  _ImersoesWidgetState createState() => _ImersoesWidgetState();
+  State<ImersoesWidget> createState() => _ImersoesWidgetState();
 }
 
 class _ImersoesWidgetState extends State<ImersoesWidget> {
@@ -233,6 +233,7 @@ class _ImersoesWidgetState extends State<ImersoesWidget> {
                                             context: context,
                                             builder: (dialogContext) {
                                               return Dialog(
+                                                elevation: 0,
                                                 insetPadding: EdgeInsets.zero,
                                                 backgroundColor:
                                                     Colors.transparent,

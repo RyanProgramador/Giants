@@ -13,10 +13,10 @@ import 'cadastro_usuarios_model.dart';
 export 'cadastro_usuarios_model.dart';
 
 class CadastroUsuariosWidget extends StatefulWidget {
-  const CadastroUsuariosWidget({Key? key}) : super(key: key);
+  const CadastroUsuariosWidget({super.key});
 
   @override
-  _CadastroUsuariosWidgetState createState() => _CadastroUsuariosWidgetState();
+  State<CadastroUsuariosWidget> createState() => _CadastroUsuariosWidgetState();
 }
 
 class _CadastroUsuariosWidgetState extends State<CadastroUsuariosWidget> {
@@ -563,6 +563,7 @@ class _CadastroUsuariosWidgetState extends State<CadastroUsuariosWidget> {
                                             context: context,
                                             builder: (dialogContext) {
                                               return Dialog(
+                                                elevation: 0,
                                                 insetPadding: EdgeInsets.zero,
                                                 backgroundColor:
                                                     Colors.transparent,

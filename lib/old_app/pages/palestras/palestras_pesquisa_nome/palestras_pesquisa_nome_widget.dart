@@ -17,10 +17,10 @@ import 'palestras_pesquisa_nome_model.dart';
 export 'palestras_pesquisa_nome_model.dart';
 
 class PalestrasPesquisaNomeWidget extends StatefulWidget {
-  const PalestrasPesquisaNomeWidget({Key? key}) : super(key: key);
+  const PalestrasPesquisaNomeWidget({super.key});
 
   @override
-  _PalestrasPesquisaNomeWidgetState createState() =>
+  State<PalestrasPesquisaNomeWidget> createState() =>
       _PalestrasPesquisaNomeWidgetState();
 }
 

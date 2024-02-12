@@ -14,10 +14,10 @@ import 'galeriaou_camera_model.dart';
 export 'galeriaou_camera_model.dart';
 
 class GaleriaouCameraWidget extends StatefulWidget {
-  const GaleriaouCameraWidget({Key? key}) : super(key: key);
+  const GaleriaouCameraWidget({super.key});
 
   @override
-  _GaleriaouCameraWidgetState createState() => _GaleriaouCameraWidgetState();
+  State<GaleriaouCameraWidget> createState() => _GaleriaouCameraWidgetState();
 }
 
 class _GaleriaouCameraWidgetState extends State<GaleriaouCameraWidget>
