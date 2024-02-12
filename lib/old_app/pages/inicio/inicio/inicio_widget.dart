@@ -1225,7 +1225,6 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                     final gridListarDois =
                                                         FFAppState()
                                                             .eventosListadosDestaqueDois
-                                                            .map((e) => e)
                                                             .toList();
                                                     if (gridListarDois
                                                         .isEmpty) {
@@ -1306,19 +1305,19 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                           nomeTitulo:
                                                                               getJsonField(
                                                                             gridListarDoisItem,
-                                                                            r'''$.descricao''',
+                                                                            r'''$..descricao''',
                                                                           ).toString(),
                                                                           exclusivoGiatnts:
                                                                               true,
                                                                           dataEvento:
                                                                               getJsonField(
                                                                             gridListarDoisItem,
-                                                                            r'''$.data''',
+                                                                            r'''$..data''',
                                                                           ).toString(),
                                                                           localEvento:
                                                                               getJsonField(
                                                                             gridListarDoisItem,
-                                                                            r'''$.local''',
+                                                                            r'''$..local''',
                                                                           ).toString(),
                                                                           sobreEvento:
                                                                               'teste',
@@ -1440,7 +1439,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                                             child: Text(
                                                                                               getJsonField(
                                                                                                 gridListarDoisItem,
-                                                                                                r'''$.descricao''',
+                                                                                                r'''$..descricao''',
                                                                                               ).toString(),
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                     fontFamily: 'Giantas Denton',
@@ -1457,7 +1456,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                                                 'E. dd MMM • HH:mm',
                                                                                                 functions.strDataParaDateTime(getJsonField(
                                                                                                   gridListarDoisItem,
-                                                                                                  r'''$.data''',
+                                                                                                  r'''$..data''',
                                                                                                 ).toString()),
                                                                                                 locale: FFLocalizations.of(context).languageCode,
                                                                                               ),
