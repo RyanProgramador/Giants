@@ -1,4 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
+import '/components/error404_noting_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -1226,6 +1227,15 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                             .eventosListadosDestaqueDois
                                                             .map((e) => e)
                                                             .toList();
+                                                    if (gridListarDois
+                                                        .isEmpty) {
+                                                      return Container(
+                                                        width: double.infinity,
+                                                        height: 200.0,
+                                                        child:
+                                                            Error404NotingWidget(),
+                                                      );
+                                                    }
                                                     return GridView.builder(
                                                       padding: EdgeInsets.zero,
                                                       gridDelegate:
