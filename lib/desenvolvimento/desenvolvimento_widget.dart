@@ -175,7 +175,7 @@ class _DesenvolvimentoWidgetState extends State<DesenvolvimentoWidget> {
                         FFAppState().visualizouVideo = false;
                       });
                     },
-                    text: 'Retoma video',
+                    text: 'Retoma video do inicio',
                     options: FFButtonOptions(
                       height: 40.0,
                       padding:
