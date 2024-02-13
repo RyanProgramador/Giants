@@ -307,6 +307,137 @@ class _MaisWidgetState extends State<MaisWidget> {
                                   ),
                                 ),
                               ),
+                              Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed(
+                                      'StaffCheckIn',
+                                      queryParameters: {
+                                        'isEvento': serializeParam(
+                                          true,
+                                          ParamType.bool,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                          duration: Duration(milliseconds: 0),
+                                        ),
+                                      },
+                                    );
+                                  },
+                                  child: Container(
+                                    width: double.infinity,
+                                    height: 50.0,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFF2B2B2B),
+                                      borderRadius: BorderRadius.circular(0.0),
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 0.0, 0.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 16.0, 0.0),
+                                            child: FaIcon(
+                                              FontAwesomeIcons.userCheck,
+                                              color: Colors.white,
+                                              size: 24.0,
+                                            ),
+                                          ),
+                                          Text(
+                                            'Check-in Staff',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              if (FFAppState().UsrClass == '5')
+                                Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed(
+                                        'StaffEventosPArticipados',
+                                        queryParameters: {
+                                          'isEvento': serializeParam(
+                                            true,
+                                            ParamType.bool,
+                                          ),
+                                          'dataIni': serializeParam(
+                                            '',
+                                            ParamType.String,
+                                          ),
+                                          'dataFin': serializeParam(
+                                            '',
+                                            ParamType.String,
+                                          ),
+                                        }.withoutNulls,
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.fade,
+                                            duration: Duration(milliseconds: 0),
+                                          ),
+                                        },
+                                      );
+                                    },
+                                    child: Container(
+                                      width: double.infinity,
+                                      height: 50.0,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFF2B2B2B),
+                                        borderRadius:
+                                            BorderRadius.circular(0.0),
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            16.0, 0.0, 0.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 16.0, 0.0),
+                                              child: Icon(
+                                                Icons.event_available_rounded,
+                                                color: Colors.white,
+                                                size: 24.0,
+                                              ),
+                                            ),
+                                            Text(
+                                              'Eventos staff',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               if (FFAppState().UsrClass != '5')
                                 Padding(
                                   padding: EdgeInsets.all(8.0),

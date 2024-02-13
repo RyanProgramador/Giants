@@ -218,6 +218,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
             pesId: params.getParam('pesId', ParamType.String),
             pesNome: params.getParam('pesNome', ParamType.String),
           ),
+        ),
+        FFRoute(
+          name: 'StaffCheckIn',
+          path: '/staffCheckIn',
+          builder: (context, params) => StaffCheckInWidget(
+            isEvento: params.getParam('isEvento', ParamType.bool),
+          ),
+        ),
+        FFRoute(
+          name: 'StaffEventosPArticipados',
+          path: '/staffEventosPArticipados',
+          builder: (context, params) => StaffEventosPArticipadosWidget(
+            isEvento: params.getParam('isEvento', ParamType.bool),
+            dataIni: params.getParam('dataIni', ParamType.String),
+            dataFin: params.getParam('dataFin', ParamType.String),
+            pesquisa: params.getParam('pesquisa', ParamType.String),
+            status: params.getParam('status', ParamType.String),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

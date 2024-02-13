@@ -109,6 +109,18 @@ class _TelaLoginWidgetState extends State<TelaLoginWidget>
               (_model.loginLembrarSenha?.jsonBody ?? ''),
             )!
                 .toString();
+            FFAppState().pesLogin = LoginCall.pesLogin(
+                          (_model.loginLembrarSenha?.jsonBody ?? ''),
+                        ) !=
+                        null &&
+                    LoginCall.pesLogin(
+                          (_model.loginLembrarSenha?.jsonBody ?? ''),
+                        ) !=
+                        ''
+                ? LoginCall.pesLogin(
+                    (_model.loginLembrarSenha?.jsonBody ?? ''),
+                  )!
+                : ' ';
           });
           _model.apicallListarEventos = await ListarEventosCall.call(
             pesId: FFAppState().usrID,
@@ -467,6 +479,23 @@ class _TelaLoginWidgetState extends State<TelaLoginWidget>
                                     )!
                                         .toString();
                                     FFAppState().PorcentagemCFG = 50.1;
+                                    FFAppState().pesLogin = LoginCall.pesLogin(
+                                                  (_model.login?.jsonBody ??
+                                                      ''),
+                                                ) !=
+                                                null &&
+                                            LoginCall.pesLogin(
+                                                  (_model.login?.jsonBody ??
+                                                      ''),
+                                                ) !=
+                                                ''
+                                        ? valueOrDefault<String>(
+                                            LoginCall.pesLogin(
+                                              (_model.login?.jsonBody ?? ''),
+                                            ),
+                                            'Error',
+                                          )
+                                        : ' ';
                                   });
 
                                   context.goNamed(

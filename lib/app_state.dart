@@ -118,6 +118,9 @@ class FFAppState extends ChangeNotifier {
               }).toList() ??
               _eventosListadosDestaqueDois;
     });
+    _safeInit(() {
+      _pesLogin = prefs.getString('ff_pesLogin') ?? _pesLogin;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -422,6 +425,13 @@ class FFAppState extends ChangeNotifier {
     _eventosListadosDestaqueDois.insert(_index, _value);
     prefs.setStringList('ff_eventosListadosDestaqueDois',
         _eventosListadosDestaqueDois.map((x) => jsonEncode(x)).toList());
+  }
+
+  String _pesLogin = '';
+  String get pesLogin => _pesLogin;
+  set pesLogin(String _value) {
+    _pesLogin = _value;
+    prefs.setString('ff_pesLogin', _value);
   }
 }
 

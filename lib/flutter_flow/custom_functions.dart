@@ -91,3 +91,43 @@ int? stringToInt(String? stringQueViraraInt) {
   // Tenta converter a string para um inteiro
   return int.tryParse(stringQueViraraInt);
 }
+
+String? jsonToStr(dynamic stringInjson) {
+  if (stringInjson == null) return null;
+  try {
+    return jsonEncode(stringInjson);
+  } catch (e) {
+    // Se a conversão falhar, você pode querer tratar o erro de alguma forma.
+    // Por exemplo, retornando null ou lançando uma exceção customizada.
+    return null; // Ou, por exemplo, throw Exception('Invalid JSON data');
+  }
+}
+
+dynamic strTojson(String? string) {
+  if (string == null) return null; // Handle null input explicitly
+  try {
+    return jsonDecode(string);
+  } catch (e) {
+    // Decoding failed, returning null or handling the error as needed
+    return null; // Or consider throwing an exception or logging the error
+  }
+}
+
+String? seEventoOuImersao(dynamic stringQueEntra) {
+  if (stringQueEntra == null) return null;
+  if (stringQueEntra is! String) return 'Evento';
+  final String entradaLower = stringQueEntra.toLowerCase();
+  if (entradaLower.contains('imersao') || entradaLower.contains('imersão')) {
+    return 'Imersão';
+  } else {
+    return 'Evento';
+  }
+}
+
+String? base64ComBarraInvertida(String? base64String) {
+  if (base64String != null) {
+    return base64String.replaceAll(r'\/', '/');
+  } else {
+    return null;
+  }
+}

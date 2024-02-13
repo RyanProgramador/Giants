@@ -7,3 +7,4 @@ export 'lock_orientation.dart' show lockOrientation;
 export 'abrir_insta.dart' show abrirInsta;
 export 'abrir_whatsapp.dart' show abrirWhatsapp;
 export 'abrir_linkedin.dart' show abrirLinkedin;
+export 'select_date_range.dart' show selectDateRange;

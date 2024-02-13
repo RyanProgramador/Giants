@@ -68,6 +68,10 @@ class LoginCall {
         response,
         r'''$.id''',
       ));
+  static String? pesLogin(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.login''',
+      ));
 }
 
 class EsqueciSenhaCall {
@@ -1419,6 +1423,120 @@ class AtualizaPrivacidadeDeDadosCall {
       alwaysAllowBody: false,
     );
   }
+}
+
+class ListarStaffsEventImerCall {
+  static Future<ApiCallResponse> call({
+    String? pesLogin = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "tipo": "apk_lista_eventos_staff",
+  "pes_login": "${pesLogin}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'listarStaffsEventImer',
+      apiUrl:
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static List? dados(dynamic response) => getJsonField(
+        response,
+        r'''$.dados''',
+        true,
+      ) as List?;
+  static List<String>? dadosJaInscrito(dynamic response) => (getJsonField(
+        response,
+        r'''$.dados[:].ja_inscrito''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+}
+
+class ApkCadastraStaffEventoCall {
+  static Future<ApiCallResponse> call({
+    String? pesLogin = '',
+    String? eventId = '',
+    String? eventOuImer = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+    "tipo": "apk_cadastro_staff_evento_imersao",
+    "pes_login" : "${pesLogin}",
+    "event_id" : "${eventId}",
+    "evento_imer" : "${eventOuImer}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'apkCadastraStaffEvento',
+      apiUrl:
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class ListaEventosParticipadosStaffCall {
+  static Future<ApiCallResponse> call({
+    String? pesLogin = '',
+    String? dataIni = '',
+    String? dataFin = '',
+    String? pesquisa = '',
+    String? statusPesq = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "tipo": "apk_lista_eventos_staff_participados",
+  "pes_login": "${pesLogin}",
+  "data_inicial": "${dataIni}",
+  "data_final": "${dataFin}",
+  "pesquisa": "${pesquisa}",
+  "statusPesq": "${statusPesq}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'listaEventosParticipadosStaff',
+      apiUrl:
+          'https://dev.conceittosistemas.com.br/scriptcase/app/GiantsRBI/ws_flutterflow/index.php',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static List? dadoslistastaffparticipados(dynamic response) => getJsonField(
+        response,
+        r'''$.dados''',
+        true,
+      ) as List?;
 }
 
 class ApiPagingParams {

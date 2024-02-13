@@ -45,3 +45,6 @@ export '/messages/messages_widget.dart' show MessagesWidget;
 export '/desenvolvimento/desenvolvimento_widget.dart'
     show DesenvolvimentoWidget;
 export '/old_app/giants_fotos/giants_fotos_widget.dart' show GiantsFotosWidget;
+export '/staff_check_in/staff_check_in_widget.dart' show StaffCheckInWidget;
+export '/staff_eventos_p_articipados/staff_eventos_p_articipados_widget.dart'
+    show StaffEventosPArticipadosWidget;

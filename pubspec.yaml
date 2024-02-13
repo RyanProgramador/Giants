@@ -28,12 +28,14 @@ dependencies:
   auto_size_text: 3.0.0
   barcode_widget: 2.0.3
   cached_network_image: 3.2.1
+  calendar_date_picker2: ^0.5.3
   camera:
   carousel_slider: 4.2.1
   chewie: 1.7.1
   collection: 1.17.2
   convert:
   country_code_picker: ^3.0.0
+  dropdown_button2: 2.3.9
   easy_debounce: 2.0.1
   equatable: 2.0.5
   floating_bottom_navigation_bar: 1.5.2
