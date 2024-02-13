@@ -346,16 +346,17 @@ class _MaisWidgetState extends State<MaisWidget> {
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 16.0, 0.0),
-                                            child: FaIcon(
-                                              FontAwesomeIcons.userCheck,
-                                              color: Colors.white,
-                                              size: 24.0,
+                                          if (FFAppState().UsrClass == '5')
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 16.0, 0.0),
+                                              child: FaIcon(
+                                                FontAwesomeIcons.userCheck,
+                                                color: Colors.white,
+                                                size: 24.0,
+                                              ),
                                             ),
-                                          ),
                                           Text(
                                             'Check-in Staff',
                                             style: FlutterFlowTheme.of(context)

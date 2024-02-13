@@ -126,7 +126,10 @@ String? seEventoOuImersao(dynamic stringQueEntra) {
 
 String? base64ComBarraInvertida(String? base64String) {
   if (base64String != null) {
-    return base64String.replaceAll(r'\/', '/');
+    // Primeiro, substitui todas as ocorrências de '\/' por '/'
+    String ajustado = base64String.replaceAll(RegExp(r'\\.'), '');
+
+    return ajustado;
   } else {
     return null;
   }
